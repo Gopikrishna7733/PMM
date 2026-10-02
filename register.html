@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Pharmaceutics Mastery Matrix (PMM) - Create Scholar Account" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pharmaceutics Mastery Matrix (PMM) - Create Scholar Account">
   <title>Create Account — Pharmaceutics Mastery Matrix (PMM)</title>
-  
-  <link rel="stylesheet" href="./css/pmm-system.css" />
-  <link rel="stylesheet" href="./css/pmm-auth.css" />
+
+  <link rel="stylesheet" href="./css/pmm-system.css">
+  <link rel="stylesheet" href="./css/pmm-auth.css">
 </head>
 <body class="pmm-auth-page">
 
@@ -33,7 +33,7 @@
 
   <!-- Auth Main Center -->
   <main class="pmm-auth-main">
-    <div class="pmm-auth-card" style="max-width: 520px;">
+    <div class="pmm-auth-card pmm-auth-card--wide">
       <div class="pmm-auth-card-header">
         <span class="pmm-badge pmm-badge--accent pmm-badge--pill">Scholar Enrollment</span>
         <h1 class="pmm-auth-title">Create Your PMM Account</h1>
@@ -47,19 +47,18 @@
       <form id="register-form" class="pmm-auth-form" novalidate>
         <!-- Full Name -->
         <div class="pmm-input-group">
-          <label for="reg-name" class="pmm-input-label">Full Name & Credentials</label>
+          <label for="reg-name" class="pmm-input-label">Full Name &amp; Credentials</label>
           <div class="pmm-input-wrap pmm-input-wrap--icon-left">
             <span class="pmm-input__icon-left" aria-hidden="true">
               <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             </span>
-            <input 
-              type="text" 
-              id="reg-name" 
-              name="fullName" 
-              class="pmm-input" 
-              placeholder="e.g. Alex Rivera, BPharm / PharmD" 
-              required 
-            />
+            <input
+              type="text"
+              id="reg-name"
+              name="fullName"
+              class="pmm-input"
+              placeholder="e.g. Alex Rivera, BPharm / PharmD"
+              required>
           </div>
         </div>
 
@@ -70,15 +69,14 @@
             <span class="pmm-input__icon-left" aria-hidden="true">
               <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </span>
-            <input 
-              type="email" 
-              id="reg-email" 
-              name="email" 
-              class="pmm-input" 
-              placeholder="e.g. a.rivera@pharmacy.edu" 
-              autocomplete="email" 
-              required 
-            />
+            <input
+              type="email"
+              id="reg-email"
+              name="email"
+              class="pmm-input"
+              placeholder="e.g. a.rivera@pharmacy.edu"
+              autocomplete="email"
+              required>
           </div>
         </div>
 
@@ -89,13 +87,12 @@
             <span class="pmm-input__icon-left" aria-hidden="true">
               <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18M3 10h18M5 10v11M19 10v11M12 2l10 5H2l10-5z"/></svg>
             </span>
-            <input 
-              type="text" 
-              id="reg-institution" 
-              name="institution" 
-              class="pmm-input" 
-              placeholder="e.g. Faculty of Pharmacy & Pharmaceutical Sciences" 
-            />
+            <input
+              type="text"
+              id="reg-institution"
+              name="institution"
+              class="pmm-input"
+              placeholder="e.g. Faculty of Pharmacy &amp; Pharmaceutical Sciences">
           </div>
         </div>
 
@@ -106,15 +103,14 @@
             <span class="pmm-input__icon-left" aria-hidden="true">
               <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
             </span>
-            <input 
-              type="password" 
-              id="reg-password" 
-              name="password" 
-              class="pmm-input" 
-              placeholder="••••••••••••" 
-              autocomplete="new-password" 
-              required 
-            />
+            <input
+              type="password"
+              id="reg-password"
+              name="password"
+              class="pmm-input"
+              placeholder="••••••••••••"
+              autocomplete="new-password"
+              required>
             <button type="button" class="pmm-password-toggle" id="btn-toggle-password" aria-label="Toggle password visibility">
               <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
             </button>
@@ -129,8 +125,8 @@
         </div>
 
         <!-- Submit Button -->
-        <button type="submit" class="pmm-btn pmm-btn--accent pmm-btn--lg" id="btn-submit" style="width: 100%; margin-top: var(--pmm-space-3);">
-          <span>Create Account & Enter Matrix</span>
+        <button type="submit" class="pmm-btn pmm-btn--accent pmm-btn--lg pmm-reg-submit-btn" id="btn-submit">
+          <span>Create Account &amp; Enter Matrix</span>
           <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
       </form>

@@ -30,7 +30,7 @@
   user-select: none;
   position: relative;
   overflow: hidden;
-  transition: 
+  transition:
     background-color var(--pmm-transition-fast),
     border-color var(--pmm-transition-fast),
     color var(--pmm-transition-fast),
@@ -165,6 +165,10 @@
   border-radius: var(--pmm-radius-md);
 }
 
+.pmm-btn--full {
+  width: 100%;
+}
+
 /* Button Loading State */
 .pmm-btn--loading {
   color: transparent !important;
@@ -201,7 +205,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: 
+  transition:
     border-color var(--pmm-transition-base),
     box-shadow var(--pmm-transition-base),
     transform var(--pmm-transition-base);
@@ -569,7 +573,7 @@
   background-color: var(--pmm-bg-surface);
   border: 1px solid var(--pmm-border-default);
   border-radius: var(--pmm-radius-md);
-  transition: 
+  transition:
     border-color var(--pmm-transition-fast),
     box-shadow var(--pmm-transition-fast),
     background-color var(--pmm-transition-fast);
@@ -991,7 +995,7 @@
   font-weight: var(--pmm-font-weight-medium);
   text-decoration: none;
   position: relative;
-  transition: 
+  transition:
     background-color var(--pmm-transition-fast),
     color var(--pmm-transition-fast);
 }
@@ -1464,7 +1468,7 @@
   padding: var(--pmm-space-3) var(--pmm-space-4);
   border-radius: var(--pmm-radius-md);
   border: 1px solid transparent;
-  transition: 
+  transition:
     background-color var(--pmm-transition-fast),
     border-color var(--pmm-transition-fast);
   gap: var(--pmm-space-4);

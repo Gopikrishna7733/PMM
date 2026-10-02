@@ -20,7 +20,7 @@
   content: "";
   position: fixed;
   inset: 0;
-  background-image: 
+  background-image:
     radial-gradient(circle at 50% 10%, rgba(37, 123, 243, 0.12) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(34, 211, 238, 0.08) 0%, transparent 40%),
     linear-gradient(to right, rgba(148, 163, 184, 0.02) 1px, transparent 1px),
@@ -238,4 +238,43 @@
   .pmm-auth-title {
     font-size: 1.375rem;
   }
+}
+
+/* Auth Layout & Element Helpers */
+.pmm-auth-card--wide {
+  max-width: 520px;
+}
+
+.pmm-demo-muted {
+  color: var(--pmm-text-muted);
+}
+
+.pmm-input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pmm-forgot-link {
+  font-size: 11px;
+  color: var(--pmm-accent);
+  text-decoration: none;
+}
+
+.pmm-forgot-link:hover {
+  text-decoration: underline;
+}
+
+.pmm-btn--full {
+  width: 100%;
+}
+
+.pmm-auth-submit-btn {
+  width: 100%;
+  margin-top: var(--pmm-space-2);
+}
+
+.pmm-reg-submit-btn {
+  width: 100%;
+  margin-top: var(--pmm-space-3);
 }

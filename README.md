@@ -177,6 +177,19 @@ PMM utilizes a custom-engineered clinical design token architecture:
    http://localhost:8000
    ```
 
+### Streamlit Interactive Suite
+
+To run the interactive PMM Streamlit analytics, quiz simulator, and telemetry dashboard:
+
+```powershell
+# Quick launch using the Windows batch launcher:
+.\run_streamlit.bat
+
+# Or run directly via Streamlit:
+streamlit run app.py --server.port 8501
+```
+The application will launch automatically at **`http://localhost:8501`**.
+
 ### Python Environment Setup
 
 For developing backend tools, test scripts, or upcoming AI question generators:

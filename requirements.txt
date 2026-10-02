@@ -13,3 +13,7 @@ python-dotenv>=1.0.1
 
 # HTTP & Networking
 requests>=2.32.0
+
+# Interactive Application
+streamlit>=1.30.0
+
