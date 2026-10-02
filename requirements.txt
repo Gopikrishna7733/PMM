@@ -1,0 +1,15 @@
+# ==============================================================================
+# Pharmaceutics Mastery Matrix (PMM) — Python Dependencies
+# ==============================================================================
+
+# Google Gemini Generative AI SDK
+google-genai>=0.1.1
+
+# Supabase Client SDK
+supabase>=2.11.0
+
+# Environment Configuration
+python-dotenv>=1.0.1
+
+# HTTP & Networking
+requests>=2.32.0

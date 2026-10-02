@@ -1,0 +1,280 @@
+/**
+ * Pharmaceutics Mastery Matrix (PMM) - Design System Tokens
+ * Brand Personality: Premium, Scientific, Academic, Modern, Intelligent, Clean, Focused, Slightly Futuristic
+ * 
+ * WCAG 2.1 AA/AAA Compliant Color Ratios & Focus Tokens
+ */
+
+:root {
+  /* ==========================================================================
+     1. COLOR SYSTEM - PRIMITIVES & PALETTES
+     ========================================================================== */
+
+  /* Primary Palette: Clinical Sapphire / Molecular Cobalt */
+  --pmm-color-primary-50:  #eef5ff;
+  --pmm-color-primary-100: #d8e8fe;
+  --pmm-color-primary-200: #b9d7fd;
+  --pmm-color-primary-300: #89bffc;
+  --pmm-color-primary-400: #529df8;
+  --pmm-color-primary-500: #257bf3;
+  --pmm-color-primary-600: #145ed7;
+  --pmm-color-primary-700: #0f49af;
+  --pmm-color-primary-800: #113e8e;
+  --pmm-color-primary-900: #133673;
+  --pmm-color-primary-950: #0c2049;
+
+  /* Secondary Palette: Precision Titanium / Cool Graphite */
+  --pmm-color-secondary-50:  #f8fafc;
+  --pmm-color-secondary-100: #f1f5f9;
+  --pmm-color-secondary-200: #e2e8f0;
+  --pmm-color-secondary-300: #cbd5e1;
+  --pmm-color-secondary-400: #94a3b8;
+  --pmm-color-secondary-500: #64748b;
+  --pmm-color-secondary-600: #475569;
+  --pmm-color-secondary-700: #334155;
+  --pmm-color-secondary-800: #1e293b;
+  --pmm-color-secondary-900: #0f172a;
+  --pmm-color-secondary-950: #080d1a;
+
+  /* Accent Palette: Bioluminescent Cyan / Active Compound Azure */
+  --pmm-color-accent-50:  #ecfeff;
+  --pmm-color-accent-100: #cffafe;
+  --pmm-color-accent-200: #a5f3fc;
+  --pmm-color-accent-300: #67e8f9;
+  --pmm-color-accent-400: #22d3ee;
+  --pmm-color-accent-500: #06b6d4;
+  --pmm-color-accent-600: #0891b2;
+  --pmm-color-accent-700: #0e7490;
+  --pmm-color-accent-800: #155e75;
+  --pmm-color-accent-900: #164e63;
+
+  /* Semantic - Clinical Status Spectrum */
+  /* Success: Synthesis Verified / Milestone Cleared */
+  --pmm-color-success-50:  #ecfdf5;
+  --pmm-color-success-100: #d1fae5;
+  --pmm-color-success-400: #34d399;
+  --pmm-color-success-500: #10b981;
+  --pmm-color-success-600: #059669;
+  --pmm-color-success-soft: rgba(16, 185, 129, 0.12);
+  --pmm-color-success-border: rgba(16, 185, 129, 0.28);
+
+  /* Warning: Diagnostic Threshold / Near Deadline */
+  --pmm-color-warning-50:  #fffbeb;
+  --pmm-color-warning-100: #fef3c7;
+  --pmm-color-warning-400: #fbbf24;
+  --pmm-color-warning-500: #f59e0b;
+  --pmm-color-warning-600: #d97706;
+  --pmm-color-warning-soft: rgba(245, 158, 11, 0.12);
+  --pmm-color-warning-border: rgba(245, 158, 11, 0.3);
+
+  /* Error: Reaction Deficit / Deficiency Alert */
+  --pmm-color-error-50:  #fff1f2;
+  --pmm-color-error-100: #ffe4e6;
+  --pmm-color-error-400: #fb7185;
+  --pmm-color-error-500: #f43f5e;
+  --pmm-color-error-600: #e11d48;
+  --pmm-color-error-soft: rgba(244, 63, 94, 0.12);
+  --pmm-color-error-border: rgba(244, 63, 94, 0.28);
+
+  /* Info: Scientific Metadata / Molecular Reference */
+  --pmm-color-info-50:  #f0f9ff;
+  --pmm-color-info-100: #e0f2fe;
+  --pmm-color-info-400: #38bdf8;
+  --pmm-color-info-500: #0284c7;
+  --pmm-color-info-600: #0369a1;
+  --pmm-color-info-soft: rgba(2, 132, 199, 0.12);
+  --pmm-color-info-border: rgba(2, 132, 199, 0.28);
+
+  /* Tier Metals (Academic Scientific Honors) */
+  --pmm-tier-bronze:   #d97706;
+  --pmm-tier-silver:   #94a3b8;
+  --pmm-tier-gold:     #eab308;
+  --pmm-tier-platinum: #38bdf8;
+  --pmm-tier-diamond:  #a855f7;
+
+  /* ==========================================================================
+     2. SPACING SCALE (8-point geometric grid with 4-point micro-increments)
+     ========================================================================== */
+  --pmm-space-0:    0px;
+  --pmm-space-1:    4px;
+  --pmm-space-2:    8px;
+  --pmm-space-3:    12px;
+  --pmm-space-4:    16px;
+  --pmm-space-5:    20px;
+  --pmm-space-6:    24px;
+  --pmm-space-8:    32px;
+  --pmm-space-10:   40px;
+  --pmm-space-12:   48px;
+  --pmm-space-16:   64px;
+  --pmm-space-20:   80px;
+  --pmm-space-24:   96px;
+
+  /* ==========================================================================
+     3. RADII SYSTEM (Clean, scientific, unexaggerated precision curves)
+     ========================================================================== */
+  --pmm-radius-xs:   4px;
+  --pmm-radius-sm:   6px;
+  --pmm-radius-md:   10px;
+  --pmm-radius-lg:   14px;
+  --pmm-radius-xl:   20px;
+  --pmm-radius-full: 9999px;
+
+  /* ==========================================================================
+     4. ELEVATION & SHADOW SYSTEM (Subtle, calibrated clinical depth)
+     ========================================================================== */
+  --pmm-shadow-xs:    0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --pmm-shadow-sm:    0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --pmm-shadow-md:    0 4px 6px -1px rgba(0, 0, 0, 0.12), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --pmm-shadow-lg:    0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --pmm-shadow-xl:    0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.15);
+  --pmm-shadow-glow:  0 0 16px -2px rgba(34, 211, 238, 0.22);
+  --pmm-shadow-glow-primary: 0 0 20px -3px rgba(37, 123, 243, 0.35);
+
+  /* ==========================================================================
+     5. TRANSITIONS & TIMING (Subtle, purposeful, non-excessive)
+     ========================================================================== */
+  --pmm-ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+  --pmm-ease-out:      cubic-bezier(0, 0, 0.2, 1);
+  --pmm-ease-in:       cubic-bezier(0.4, 0, 1, 1);
+  
+  --pmm-transition-instant: 75ms var(--pmm-ease-standard);
+  --pmm-transition-fast:    150ms var(--pmm-ease-standard);
+  --pmm-transition-base:    220ms var(--pmm-ease-standard);
+  --pmm-transition-smooth:  320ms var(--pmm-ease-standard);
+
+  /* ==========================================================================
+     6. Z-INDEX HIERARCHY
+     ========================================================================== */
+  --pmm-z-base:       1;
+  --pmm-z-sticky:     100;
+  --pmm-z-header:     200;
+  --pmm-z-sidebar:    300;
+  --pmm-z-dropdown:   400;
+  --pmm-z-backdrop:   500;
+  --pmm-z-modal:      600;
+  --pmm-z-toast:      700;
+  --pmm-z-tooltip:    800;
+
+  /* ==========================================================================
+     7. ACCESSIBILITY & FOCUS
+     ========================================================================== */
+  --pmm-focus-ring-width: 2px;
+  --pmm-focus-ring-offset: 2px;
+}
+
+/* ==========================================================================
+   DEFAULT THEME: CLINICAL SCIENTIFIC DARK MODE
+   High-contrast, distraction-free environment for deep academic immersion.
+   ========================================================================== */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Backgrounds */
+  --pmm-bg-app:              #070a12;
+  --pmm-bg-canvas:           #0a0f1b;
+  --pmm-bg-subtle:           #0f172a;
+  --pmm-bg-surface:          #131c2e;
+  --pmm-bg-surface-elevated: #18233a;
+  --pmm-bg-surface-active:   #1f2c48;
+  --pmm-bg-glass:            rgba(19, 28, 46, 0.82);
+
+  /* Primary Brand References */
+  --pmm-primary:             var(--pmm-color-primary-500);
+  --pmm-primary-hover:       var(--pmm-color-primary-400);
+  --pmm-primary-active:      var(--pmm-color-primary-600);
+  --pmm-primary-soft:        rgba(37, 123, 243, 0.15);
+  --pmm-primary-border:      rgba(82, 157, 248, 0.35);
+
+  /* Secondary References */
+  --pmm-secondary:           var(--pmm-color-secondary-400);
+  --pmm-secondary-hover:     var(--pmm-color-secondary-300);
+  --pmm-secondary-bg:        rgba(148, 163, 184, 0.08);
+
+  /* Accent References */
+  --pmm-accent:              var(--pmm-color-accent-400);
+  --pmm-accent-hover:        var(--pmm-color-accent-300);
+  --pmm-accent-soft:         rgba(34, 211, 238, 0.12);
+  --pmm-accent-border:       rgba(34, 211, 238, 0.3);
+
+  /* Borders & Dividers */
+  --pmm-border-subtle:       rgba(148, 163, 184, 0.1);
+  --pmm-border-default:      rgba(148, 163, 184, 0.18);
+  --pmm-border-strong:       rgba(148, 163, 184, 0.32);
+  --pmm-border-highlight:    rgba(255, 255, 255, 0.08);
+
+  /* Text & Content */
+  --pmm-text-primary:        #f8fafc;
+  --pmm-text-secondary:      #94a3b8;
+  --pmm-text-muted:          #64748b;
+  --pmm-text-disabled:       #475569;
+  --pmm-text-inverse:        #070a12;
+  --pmm-text-accent:         #38bdf8;
+
+  /* Interactive Elements */
+  --pmm-focus-ring-color:    #38bdf8;
+  --pmm-focus-ring:          0 0 0 var(--pmm-focus-ring-width) var(--pmm-focus-ring-color);
+  --pmm-focus-ring-offset-c: #070a12;
+
+  /* Card Specular Sheen (Subtle top edge light refraction) */
+  --pmm-card-sheen:          linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, transparent 100%);
+  --pmm-card-glass-border:   1px solid rgba(148, 163, 184, 0.14);
+}
+
+/* ==========================================================================
+   OPTIONAL THEME: CRISP CLINICAL LIGHT MODE
+   Precision laboratory white & cool slate for daylight research sessions.
+   ========================================================================== */
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Backgrounds */
+  --pmm-bg-app:              #f8fafc;
+  --pmm-bg-canvas:           #f1f5f9;
+  --pmm-bg-subtle:           #e2e8f0;
+  --pmm-bg-surface:          #ffffff;
+  --pmm-bg-surface-elevated: #ffffff;
+  --pmm-bg-surface-active:   #f1f5f9;
+  --pmm-bg-glass:            rgba(255, 255, 255, 0.9);
+
+  /* Primary Brand References */
+  --pmm-primary:             var(--pmm-color-primary-600);
+  --pmm-primary-hover:       var(--pmm-color-primary-700);
+  --pmm-primary-active:      var(--pmm-color-primary-800);
+  --pmm-primary-soft:        rgba(20, 94, 215, 0.08);
+  --pmm-primary-border:      rgba(20, 94, 215, 0.25);
+
+  /* Secondary References */
+  --pmm-secondary:           var(--pmm-color-secondary-600);
+  --pmm-secondary-hover:     var(--pmm-color-secondary-800);
+  --pmm-secondary-bg:        rgba(100, 116, 139, 0.08);
+
+  /* Accent References */
+  --pmm-accent:              var(--pmm-color-accent-600);
+  --pmm-accent-hover:        var(--pmm-color-accent-700);
+  --pmm-accent-soft:         rgba(8, 145, 178, 0.1);
+  --pmm-accent-border:       rgba(8, 145, 178, 0.25);
+
+  /* Borders & Dividers */
+  --pmm-border-subtle:       rgba(100, 116, 139, 0.12);
+  --pmm-border-default:      rgba(100, 116, 139, 0.2);
+  --pmm-border-strong:       rgba(71, 85, 105, 0.35);
+  --pmm-border-highlight:    rgba(0, 0, 0, 0.03);
+
+  /* Text & Content */
+  --pmm-text-primary:        #0f172a;
+  --pmm-text-secondary:      #475569;
+  --pmm-text-muted:          #64748b;
+  --pmm-text-disabled:       #94a3b8;
+  --pmm-text-inverse:        #ffffff;
+  --pmm-text-accent:         #0284c7;
+
+  /* Interactive Elements */
+  --pmm-focus-ring-color:    #0284c7;
+  --pmm-focus-ring:          0 0 0 var(--pmm-focus-ring-width) var(--pmm-focus-ring-color);
+  --pmm-focus-ring-offset-c: #ffffff;
+
+  /* Card Specular Sheen */
+  --pmm-card-sheen:          linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, transparent 100%);
+  --pmm-card-glass-border:   1px solid rgba(203, 213, 225, 0.7);
+}

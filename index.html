@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pharmaceutics Mastery Matrix (PMM) - An advanced pharmaceutical science education and quiz mastery platform. Learn. Practice. Master." />
+  <title>Pharmaceutics Mastery Matrix (PMM) — Learn. Practice. Master.</title>
+  
+  <!-- Design System Stylesheets -->
+  <link rel="stylesheet" href="./css/pmm-system.css" />
+  <link rel="stylesheet" href="./css/pmm-landing.css" />
+</head>
+<body class="pmm-landing-body">
+
+  <!-- ========================================================================
+       1. NAVIGATION SECTION
+       ======================================================================== -->
+  <header class="pmm-landing-header" id="top-nav">
+    <nav class="pmm-landing-nav" aria-label="Main Navigation">
+      <!-- Left: Logo & Title -->
+      <a href="#hero" class="pmm-brand-lockup" aria-label="Pharmaceutics Mastery Matrix Home">
+        <div class="pmm-brand-logo" aria-hidden="true">
+          <span>PMM</span>
+        </div>
+        <div class="pmm-brand-text">
+          <span class="pmm-brand-title">Pharmaceutics Mastery Matrix</span>
+          <span class="pmm-brand-subtitle">Learn. Practice. Master.</span>
+        </div>
+      </a>
+
+      <!-- Right: Main Menu Links -->
+      <div class="pmm-nav-menu" role="menubar">
+        <a href="#hero" class="pmm-nav-link" role="menuitem">Home</a>
+        <a href="#subjects" class="pmm-nav-link" role="menuitem">Subjects</a>
+        <a href="#how-it-works" class="pmm-nav-link" role="menuitem">How It Works</a>
+        <a href="#performance" class="pmm-nav-link" role="menuitem">Performance</a>
+        <a href="#about" class="pmm-nav-link" role="menuitem">About</a>
+      </div>
+
+      <!-- Right: Actions & Theme Toggle -->
+      <div class="pmm-nav-actions">
+        <!-- Dark/Light Theme Switcher -->
+        <button type="button" class="pmm-btn pmm-btn--icon pmm-btn--ghost" data-pmm-theme-toggle aria-label="Toggle dark/light visual mode" data-pmm-tooltip="Toggle Mode" data-pmm-tooltip-pos="bottom">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <!-- Route placeholder buttons -->
+        <a href="login.html" class="pmm-btn pmm-btn--outline" id="nav-login-btn">
+          <span>Login</span>
+        </a>
+        <a href="register.html" class="pmm-btn pmm-btn--primary" id="nav-register-btn">
+          <span>Create Account</span>
+        </a>
+
+        <!-- Mobile Drawer Hamburger -->
+        <button type="button" class="pmm-btn pmm-btn--icon pmm-btn--ghost pmm-mobile-toggle" id="pmm-mobile-menu-btn" aria-label="Open mobile navigation menu">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu Drawer & Backdrop -->
+  <div class="pmm-sidebar-backdrop" id="pmm-mobile-backdrop"></div>
+  <aside class="pmm-shell__sidebar pmm-sidebar" id="pmm-mobile-drawer" style="display:none;" aria-label="Mobile Navigation Drawer">
+    <div class="pmm-sidebar__header">
+      <div class="pmm-sidebar__logo-mark">PMM</div>
+      <div class="pmm-sidebar__brand-text">
+        <span class="pmm-sidebar__brand-name">Pharmaceutics Matrix</span>
+        <span class="pmm-sidebar__brand-tag">Navigation</span>
+      </div>
+      <button type="button" class="pmm-btn pmm-btn--icon pmm-btn--ghost" id="pmm-mobile-close-btn" style="margin-left: auto;" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="pmm-nav">
+      <a href="#hero" class="pmm-nav__link pmm-nav__link--active"><span class="pmm-nav__label">Home</span></a>
+      <a href="#subjects" class="pmm-nav__link"><span class="pmm-nav__label">Subjects</span></a>
+      <a href="#how-it-works" class="pmm-nav__link"><span class="pmm-nav__label">How It Works</span></a>
+      <a href="#performance" class="pmm-nav__link"><span class="pmm-nav__label">Performance</span></a>
+      <a href="#about" class="pmm-nav__link"><span class="pmm-nav__label">About</span></a>
+    </nav>
+    <div class="pmm-sidebar__footer" style="display: flex; flex-direction: column; gap: var(--pmm-space-3);">
+      <a href="login.html" class="pmm-btn pmm-btn--outline" style="width: 100%;">Login</a>
+      <a href="register.html" class="pmm-btn pmm-btn--primary" style="width: 100%;">Create Account</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ======================================================================
+         2. HERO SECTION
+         ====================================================================== -->
+    <section class="pmm-hero-section" id="hero">
+      <div class="pmm-hero-grid">
+        <!-- Left Column: Copy & Calls to Action -->
+        <div class="pmm-hero-content">
+          <div class="pmm-hero-badge-wrap">
+            <span class="pmm-badge pmm-badge--accent pmm-badge--pill">
+              <span aria-hidden="true">⚗️</span> Academic Pharmacy Mastery Platform
+            </span>
+          </div>
+
+          <h1 class="pmm-hero-title">
+            Master Pharmacy.<br />
+            <span class="pmm-hero-title-accent">One Quiz at a Time.</span>
+          </h1>
+
+          <p class="pmm-hero-subtitle">
+            Practice pharmaceutical sciences, track your performance, identify weak areas, and build mastery through intelligent quiz-based learning.
+          </p>
+
+          <div class="pmm-hero-ctas">
+            <a href="register.html" class="pmm-btn pmm-btn--primary pmm-btn--lg" id="hero-cta-start">
+              <span>Start Learning</span>
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#subjects" class="pmm-btn pmm-btn--outline pmm-btn--lg" id="hero-cta-explore">
+              <span>Explore Subjects</span>
+            </a>
+          </div>
+
+          <!-- Credibility / Realism Indicators -->
+          <div class="pmm-hero-meta-row">
+            <div class="pmm-meta-item">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="pmm-text-accent" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span><strong>12,400+</strong> Peer-Reviewed Items</span>
+            </div>
+            <div class="pmm-meta-item">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="pmm-text-accent" aria-hidden="true"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+              <span><strong>6</strong> Core Pharmacy Disciplines</span>
+            </div>
+            <div class="pmm-meta-item">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="pmm-text-accent" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              <span><strong>USP / Ph. Eur.</strong> Aligned</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Sophisticated Scientific Visual Element (HUD + Molecular Matrix) -->
+        <div class="pmm-hero-visual-wrap" aria-label="Interactive Clinical Quiz Interface Simulation">
+          <div class="pmm-hero-visual-glow" aria-hidden="true"></div>
+
+          <!-- Top-right Floating Scientific Telemetry Chip -->
+          <div class="pmm-floating-chip pmm-floating-chip--top-right" aria-hidden="true">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="pmm-text-accent"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>t₁/₂ = 3.42 hrs • Vd = 0.65 L/kg</span>
+          </div>
+
+          <!-- Simulated Live Clinical Quiz HUD -->
+          <div class="pmm-hero-quiz-card">
+            <!-- HUD Header -->
+            <div class="pmm-hero-quiz-hud">
+              <span class="pmm-hud-live-tag">PMM SIMULATION ACTIVE</span>
+              <span>ITEM #PK-408 • PHARMACOKINETICS</span>
+            </div>
+
+            <!-- Question Box -->
+            <div class="pmm-quiz-question-box">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--pmm-space-3);">
+                <span class="pmm-badge pmm-badge--primary">Biopharmaceutics</span>
+                <span class="pmm-micro pmm-mono">Timer: 00:38</span>
+              </div>
+
+              <p class="pmm-quiz-question-text">
+                Which pharmacokinetic parameter remains fundamentally unaltered when switching from an intravenous bolus injection to a continuous zero-order infusion at steady state?
+              </p>
+
+              <!-- Interactive Options -->
+              <div class="pmm-quiz-options-list" role="radiogroup" aria-label="Pharmacokinetics question options">
+                <div class="pmm-quiz-option-item" role="radio" aria-checked="false" tabindex="0">
+                  <span class="pmm-option-key">A</span>
+                  <span>Peak plasma drug concentration (Cmax)</span>
+                </div>
+
+                <div class="pmm-quiz-option-item pmm-quiz-option-item--selected" role="radio" aria-checked="true" tabindex="0" data-correct="true">
+                  <span class="pmm-option-key">B</span>
+                  <span>Elimination rate constant (Kel) and intrinsic clearance</span>
+                </div>
+
+                <div class="pmm-quiz-option-item" role="radio" aria-checked="false" tabindex="0">
+                  <span class="pmm-option-key">C</span>
+                  <span>Fluctuation index between dosing intervals (PTF)</span>
+                </div>
+
+                <div class="pmm-quiz-option-item" role="radio" aria-checked="false" tabindex="0">
+                  <span class="pmm-option-key">D</span>
+                  <span>Time required to reach steady-state plateau (Css)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- HUD Card Footer -->
+            <div class="pmm-hero-quiz-footer">
+              <div id="pmm-quiz-feedback" style="display: flex; align-items: center; gap: var(--pmm-space-2);">
+                <span class="pmm-badge pmm-badge--success pmm-badge--dot">Verified Clinical Correct</span>
+                <span class="pmm-micro pmm-mono">+15 Mastery Points</span>
+              </div>
+              <span class="pmm-badge pmm-badge--platinum">Mastery Rate: 96.4%</span>
+            </div>
+          </div>
+
+          <!-- Bottom-left Floating Scientific Telemetry Chip -->
+          <div class="pmm-floating-chip pmm-floating-chip--bottom-left" aria-hidden="true">
+            <span class="pmm-badge pmm-badge--accent pmm-badge--dot">C₂₂H₂₄N₂O₈ (Doxycycline)</span>
+            <span>BCS Class I • Matrix Stability 99.8%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. PMM MASTERY CONCEPT SECTION (4 Connected Steps)
+         ====================================================================== -->
+    <section class="pmm-concept-section" id="how-it-works">
+      <div class="pmm-section-header">
+        <div class="pmm-section-tag">
+          <span class="pmm-badge pmm-badge--accent">Systematic Methodology</span>
+        </div>
+        <h2 class="pmm-h1">The PMM Mastery Framework</h2>
+        <p class="pmm-body-lead">
+          A continuous, four-stage learning loop engineered to transform rote memorization into lasting academic and clinical comprehension.
+        </p>
+      </div>
+
+      <!-- 4 Connected Steps Pipeline -->
+      <div class="pmm-steps-pipeline">
+        <!-- Step 1: Learn -->
+        <div class="pmm-step-card">
+          <div class="pmm-step-icon-wrap">
+            <span class="pmm-step-num-badge">1</span>
+            <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <h3 class="pmm-step-title">Learn</h3>
+          <p class="pmm-step-desc">
+            Explore concise, curriculum-aligned scientific modules. Master formulation kinetics, drug delivery mechanisms, and pharmacological pathways without fluff.
+          </p>
+          <div class="pmm-step-pill">
+            <span>Structured Academic Syllabi</span>
+          </div>
+        </div>
+
+        <!-- Step 2: Practice -->
+        <div class="pmm-step-card">
+          <div class="pmm-step-icon-wrap">
+            <span class="pmm-step-num-badge">2</span>
+            <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3 class="pmm-step-title">Practice</h3>
+          <p class="pmm-step-desc">
+            Solve adaptive, high-yield multiple-choice questions and clinical scenarios with rigorous rationales linked to standard pharmacopeial compendia.
+          </p>
+          <div class="pmm-step-pill">
+            <span>Timed & Adaptive Quizzes</span>
+          </div>
+        </div>
+
+        <!-- Step 3: Analyze -->
+        <div class="pmm-step-card">
+          <div class="pmm-step-icon-wrap">
+            <span class="pmm-step-num-badge">3</span>
+            <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3 class="pmm-step-title">Analyze</h3>
+          <p class="pmm-step-desc">
+            Identify exact knowledge gaps. Granular error analytics map deficiencies down to specific sub-disciplines, dosage forms, or drug-interaction pathways.
+          </p>
+          <div class="pmm-step-pill">
+            <span>Sub-Topic Deficit Mapping</span>
+          </div>
+        </div>
+
+        <!-- Step 4: Master -->
+        <div class="pmm-step-card">
+          <div class="pmm-step-icon-wrap" style="color: var(--pmm-color-success-400);">
+            <span class="pmm-step-num-badge">4</span>
+            <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15l-2 5 4-2 4 2-2-5"/><circle cx="12" cy="9" r="7"/></svg>
+          </div>
+          <h3 class="pmm-step-title">Master</h3>
+          <p class="pmm-step-desc">
+            Reinforce retention via spaced repetition until you reliably hit verified passing thresholds (≥85%) and unlock academic mastery tiers.
+          </p>
+          <div class="pmm-step-pill" style="color: var(--pmm-color-success-400);">
+            <span>Verified Matrix Index</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. SUBJECTS PREVIEW SECTION
+         ====================================================================== -->
+    <section class="pmm-subjects-section" id="subjects">
+      <div class="pmm-section-header">
+        <div class="pmm-section-tag">
+          <span class="pmm-badge pmm-badge--primary">Academic Curriculum</span>
+        </div>
+        <h2 class="pmm-h1">Core Pharmaceutical Subjects</h2>
+        <p class="pmm-body-lead">
+          Comprehensive curriculum coverage built to align with professional pharmacy board examinations and university coursework.
+        </p>
+      </div>
+
+      <div class="pmm-subjects-grid">
+        <!-- 1. Pharmacology -->
+        <div class="pmm-card pmm-card--interactive pmm-subject-preview-card">
+          <div class="pmm-subject-card__meta-row">
+            <span class="pmm-subject-card__code">PMM-PHARM-101</span>
+            <span class="pmm-badge pmm-badge--accent">Intermediate</span>
+          </div>
+          <div>
+            <h3 class="pmm-subject-card__title">Pharmacology</h3>
+            <div class="pmm-subject-card__stats" style="margin-top: var(--pmm-space-2);">
+              <span>34 Topics</span>
+              <span>•</span>
+              <span>1,420 MCQs</span>
+            </div>
+          </div>
+          <p class="pmm-subject-card-desc">
+            Receptor dynamics, signal transduction, autonomic & cardiovascular pharmacology, chemotherapy, and neuropharmacological agents.
+          </p>
+          <div class="pmm-progress pmm-progress--accent">
+            <div class="pmm-progress__header">
+              <span class="pmm-progress__label">Curriculum Depth</span>
+              <span class="pmm-progress__value">94%</span>
+            </div>
+            <div class="pmm-progress__track">
+              <div class="pmm-progress__bar" style="width: 94%;"></div>
+            </div>
+          </div>
+          <div class="pmm-subject-card__footer">
+            <span class="pmm-micro">Avg Pass: 88.2%</span>
+            <a href="register.html" class="pmm-btn pmm-btn--sm pmm-btn--outline">Explore Deck</a>
+          </div>
+        </div>
+
+        <!-- 2. Pharmaceutics -->
+        <div class="pmm-card pmm-card--interactive pmm-subject-preview-card">
+          <div class="pmm-subject-card__meta-row">
+            <span class="pmm-subject-card__code">PMM-PCEUT-201</span>
+            <span class="pmm-badge pmm-badge--success">Clinical Core</span>
+          </div>
+          <div>
+            <h3 class="pmm-subject-card__title">Pharmaceutics</h3>
+            <div class="pmm-subject-card__stats" style="margin-top: var(--pmm-space-2);">
+              <span>28 Topics</span>
+              <span>•</span>
+              <span>1,180 MCQs</span>
+            </div>
+          </div>
+          <p class="pmm-subject-card-desc">
+            Solid dosage forms, modified release technology, biopharmaceutics classification system (BCS), preformulation stability, and sterile compounding.
+          </p>
+          <div class="pmm-progress pmm-progress--success">
+            <div class="pmm-progress__header">
+              <span class="pmm-progress__label">Curriculum Depth</span>
+              <span class="pmm-progress__value">98%</span>
+            </div>
+            <div class="pmm-progress__track">
+              <div class="pmm-progress__bar" style="width: 98%;"></div>
+            </div>
+          </div>
+          <div class="pmm-subject-card__footer">
+            <span class="pmm-micro">Avg Pass: 91.4%</span>
+            <a href="register.html" class="pmm-btn pmm-btn--sm pmm-btn--outline">Explore Deck</a>
+          </div>
+        </div>
+
+        <!-- 3. Pharmacognosy -->
+        <div class="pmm-card pmm-card--interactive pmm-subject-preview-card">
+          <div class="pmm-subject-card__meta-row">
+            <span class="pmm-subject-card__code">PMM-PCOG-301</span>
+            <span class="pmm-badge pmm-badge--primary">Foundational</span>
+          </div>
+          <div>
+            <h3 class="pmm-subject-card__title">Pharmacognosy</h3>
+            <div class="pmm-subject-card__stats" style="margin-top: var(--pmm-space-2);">
+              <span>22 Topics</span>
+              <span>•</span>
+              <span>890 MCQs</span>
+            </div>
+          </div>
+          <p class="pmm-subject-card-desc">
+            Natural product chemistry, secondary metabolites, alkaloid isolation, bioactive phytomedicines, standardized herbal monographs, and toxicology.
+          </p>
+          <div class="pmm-progress pmm-progress--accent">
+            <div class="pmm-progress__header">
+              <span class="pmm-progress__label">Curriculum Depth</span>
+              <span class="pmm-progress__value">86%</span>
+            </div>
+            <div class="pmm-progress__track">
+              <div class="pmm-progress__bar" style="width: 86%;"></div>
+            </div>
+          </div>
+          <div class="pmm-subject-card__footer">
+            <span class="pmm-micro">Avg Pass: 85.0%</span>
+            <a href="register.html" class="pmm-btn pmm-btn--sm pmm-btn--outline">Explore Deck</a>
+          </div>
+        </div>
+
+        <!-- 4. Medicinal Chemistry -->
+        <div class="pmm-card pmm-card--interactive pmm-subject-preview-card">
+          <div class="pmm-subject-card__meta-row">
+            <span class="pmm-subject-card__code">PMM-MEDCHEM-401</span>
+            <span class="pmm-badge pmm-badge--warning">Advanced Analytical</span>
+          </div>
+          <div>
+            <h3 class="pmm-subject-card__title">Medicinal Chemistry</h3>
+            <div class="pmm-subject-card__stats" style="margin-top: var(--pmm-space-2);">
+              <span>30 Topics</span>
+              <span>•</span>
+              <span>1,350 MCQs</span>
+            </div>
+          </div>
+          <p class="pmm-subject-card-desc">
+            Structure-activity relationships (SAR), bioisosterism, drug metabolism (Phase I/II enzymes), molecular docking principles, and prodrug synthesis.
+          </p>
+          <div class="pmm-progress pmm-progress--warning">
+            <div class="pmm-progress__header">
+              <span class="pmm-progress__label">Curriculum Depth</span>
+              <span class="pmm-progress__value">92%</span>
+            </div>
+            <div class="pmm-progress__track">
+              <div class="pmm-progress__bar" style="width: 92%;"></div>
+            </div>
+          </div>
+          <div class="pmm-subject-card__footer">
+            <span class="pmm-micro">Avg Pass: 82.6%</span>
+            <a href="register.html" class="pmm-btn pmm-btn--sm pmm-btn--outline">Explore Deck</a>
+          </div>
+        </div>
+
+        <!-- 5. Clinical Pharmacy -->
+        <div class="pmm-card pmm-card--interactive pmm-subject-preview-card">
+          <div class="pmm-subject-card__meta-row">
+            <span class="pmm-subject-card__code">PMM-CLIN-501</span>
+            <span class="pmm-badge pmm-badge--accent">Clinical Case</span>
+          </div>
+          <div>
+            <h3 class="pmm-subject-card__title">Clinical Pharmacy</h3>
+            <div class="pmm-subject-card__stats" style="margin-top: var(--pmm-space-2);">
+              <span>36 Topics</span>
+              <span>•</span>
+              <span>1,600 MCQs</span>
+            </div>
+          </div>
+          <p class="pmm-subject-card-desc">
+            Therapeutic drug monitoring (TDM), pharmacokinetic dosing adjustments in organ failure, adverse drug reactions, drug interactions, and case studies.
+          </p>
+          <div class="pmm-progress pmm-progress--accent">
+            <div class="pmm-progress__header">
+              <span class="pmm-progress__label">Curriculum Depth</span>
+              <span class="pmm-progress__value">96%</span>
+            </div>
+            <div class="pmm-progress__track">
+              <div class="pmm-progress__bar" style="width: 96%;"></div>
+            </div>
+          </div>
+          <div class="pmm-subject-card__footer">
+            <span class="pmm-micro">Avg Pass: 89.3%</span>
+            <a href="register.html" class="pmm-btn pmm-btn--sm pmm-btn--outline">Explore Deck</a>
+          </div>
+        </div>
+
+        <!-- 6. Pharmaceutical Analysis -->
+        <div class="pmm-card pmm-card--interactive pmm-subject-preview-card">
+          <div class="pmm-subject-card__meta-row">
+            <span class="pmm-subject-card__code">PMM-ANAL-601</span>
+            <span class="pmm-badge pmm-badge--primary">Instrumentation</span>
+          </div>
+          <div>
+            <h3 class="pmm-subject-card__title">Pharmaceutical Analysis</h3>
+            <div class="pmm-subject-card__stats" style="margin-top: var(--pmm-space-2);">
+              <span>26 Topics</span>
+              <span>•</span>
+              <span>980 MCQs</span>
+            </div>
+          </div>
+          <p class="pmm-subject-card-desc">
+            Spectrophotometry (UV-Vis, FTIR, NMR), chromatographic assays (HPLC, GC-MS), titrimetric testing, dissolution profiling, and compendial validation.
+          </p>
+          <div class="pmm-progress pmm-progress--primary">
+            <div class="pmm-progress__header">
+              <span class="pmm-progress__label">Curriculum Depth</span>
+              <span class="pmm-progress__value">90%</span>
+            </div>
+            <div class="pmm-progress__track">
+              <div class="pmm-progress__bar" style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="pmm-subject-card__footer">
+            <span class="pmm-micro">Avg Pass: 86.8%</span>
+            <a href="register.html" class="pmm-btn pmm-btn--sm pmm-btn--outline">Explore Deck</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. PERFORMANCE TELEMETRY SECTION (Illustrative UI)
+         ====================================================================== -->
+    <section class="pmm-performance-section" id="performance">
+      <div class="pmm-section-header">
+        <div class="pmm-section-tag">
+          <span class="pmm-badge pmm-badge--accent">Telemetry Engine</span>
+        </div>
+        <h2 class="pmm-h1">Performance & Analytics</h2>
+        <p class="pmm-body-lead">
+          Illustrative diagnostic telemetry that gives you actionable insight into your retention, pacing, and domain competency.
+        </p>
+      </div>
+
+      <!-- 4 Core Performance Metric Cards -->
+      <div class="pmm-performance-grid">
+        <!-- 1. Accuracy -->
+        <div class="pmm-card pmm-stat-card">
+          <div class="pmm-stat-card__header">
+            <span class="pmm-stat-card__label">Accuracy Rate</span>
+            <div class="pmm-stat-card__icon pmm-stat-card__icon--accent">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+          </div>
+          <div class="pmm-stat-card__value">94.6%</div>
+          <div class="pmm-stat-card__footer">
+            <span class="pmm-stat-card__trend pmm-stat-card__trend--up">↑ +4.2%</span>
+            <span class="pmm-stat-card__context">vs target index</span>
+          </div>
+        </div>
+
+        <!-- 2. Quiz Progress -->
+        <div class="pmm-card pmm-stat-card">
+          <div class="pmm-stat-card__header">
+            <span class="pmm-stat-card__label">Quiz Progress</span>
+            <div class="pmm-stat-card__icon pmm-stat-card__icon--success">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+          </div>
+          <div class="pmm-stat-card__value">1,420 <span style="font-size: 1rem; color: var(--pmm-text-muted); font-weight: 500;">/ 2,000</span></div>
+          <div class="pmm-stat-card__footer">
+            <span class="pmm-badge pmm-badge--success pmm-badge--dot">71% Completed</span>
+            <span class="pmm-stat-card__context">580 remaining</span>
+          </div>
+        </div>
+
+        <!-- 3. Mastery Level -->
+        <div class="pmm-card pmm-stat-card">
+          <div class="pmm-stat-card__header">
+            <span class="pmm-stat-card__label">Mastery Level</span>
+            <div class="pmm-stat-card__icon">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+          </div>
+          <div class="pmm-stat-card__value" style="font-size: 1.5rem; line-height: 1.2;">Tier IV: Fellow</div>
+          <div class="pmm-stat-card__footer">
+            <span class="pmm-badge pmm-badge--platinum">88% to Dean's Scholar</span>
+          </div>
+        </div>
+
+        <!-- 4. Daily Streak -->
+        <div class="pmm-card pmm-stat-card">
+          <div class="pmm-stat-card__header">
+            <span class="pmm-stat-card__label">Daily Streak</span>
+            <div class="pmm-stat-card__icon pmm-stat-card__icon--warning">
+              <span style="font-size: 16px;">🔥</span>
+            </div>
+          </div>
+          <div class="pmm-stat-card__value">18 Days</div>
+          <div class="pmm-stat-card__footer">
+            <span class="pmm-stat-card__trend" style="color: var(--pmm-color-warning-400);">Active Recall Streak</span>
+            <span class="pmm-stat-card__context">Personal Record: 24d</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Domain Breakdown Telemetry Table -->
+      <div class="pmm-telemetry-showcase">
+        <div class="pmm-card pmm-card--elevated" style="padding: var(--pmm-space-6);">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--pmm-space-4);">
+            <div>
+              <h3 class="pmm-card__title">Domain Diagnostic Breakdown</h3>
+              <p class="pmm-card__subtitle">Simulated cohort mastery across pharmaceutical competencies</p>
+            </div>
+            <span class="pmm-badge pmm-badge--accent pmm-badge--dot">Live Matrix Telemetry</span>
+          </div>
+
+          <div style="overflow-x: auto;">
+            <table class="pmm-domain-matrix-table" aria-label="Pharmaceutical competency breakdown">
+              <thead>
+                <tr>
+                  <th scope="col">Competency Area</th>
+                  <th scope="col">Curriculum Domain</th>
+                  <th scope="col">Questions Solved</th>
+                  <th scope="col">Accuracy Index</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-weight: 600; color: var(--pmm-text-primary);">Zero-Order & First-Order Elimination Kinetics</td>
+                  <td>Biopharmaceutics (PMM-201)</td>
+                  <td class="pmm-mono">420 / 450</td>
+                  <td>
+                    <div style="display: flex; align-items: center; gap: var(--pmm-space-3);">
+                      <div class="pmm-progress" style="width: 100px;">
+                        <div class="pmm-progress__track"><div class="pmm-progress__bar" style="width: 96%;"></div></div>
+                      </div>
+                      <span class="pmm-mono">96.0%</span>
+                    </div>
+                  </td>
+                  <td><span class="pmm-badge pmm-badge--success pmm-badge--dot">Mastered</span></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 600; color: var(--pmm-text-primary);">Autonomic Receptor Agonists & Antagonists</td>
+                  <td>Pharmacology (PMM-101)</td>
+                  <td class="pmm-mono">310 / 380</td>
+                  <td>
+                    <div style="display: flex; align-items: center; gap: var(--pmm-space-3);">
+                      <div class="pmm-progress" style="width: 100px;">
+                        <div class="pmm-progress__track"><div class="pmm-progress__bar" style="width: 91%;"></div></div>
+                      </div>
+                      <span class="pmm-mono">91.4%</span>
+                    </div>
+                  </td>
+                  <td><span class="pmm-badge pmm-badge--success pmm-badge--dot">Verified</span></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 600; color: var(--pmm-text-primary);">Phase I Cytochrome P450 Biotransformation</td>
+                  <td>Medicinal Chemistry (PMM-401)</td>
+                  <td class="pmm-mono">245 / 320</td>
+                  <td>
+                    <div style="display: flex; align-items: center; gap: var(--pmm-space-3);">
+                      <div class="pmm-progress pmm-progress--warning" style="width: 100px;">
+                        <div class="pmm-progress__track"><div class="pmm-progress__bar" style="width: 76%;"></div></div>
+                      </div>
+                      <span class="pmm-mono">76.5%</span>
+                    </div>
+                  </td>
+                  <td><span class="pmm-badge pmm-badge--warning pmm-badge--dot">Review Needed</span></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 600; color: var(--pmm-text-primary);">Therapeutic Drug Monitoring (Vancomycin/Aminoglycosides)</td>
+                  <td>Clinical Pharmacy (PMM-501)</td>
+                  <td class="pmm-mono">290 / 310</td>
+                  <td>
+                    <div style="display: flex; align-items: center; gap: var(--pmm-space-3);">
+                      <div class="pmm-progress" style="width: 100px;">
+                        <div class="pmm-progress__track"><div class="pmm-progress__bar" style="width: 93%;"></div></div>
+                      </div>
+                      <span class="pmm-mono">93.5%</span>
+                    </div>
+                  </td>
+                  <td><span class="pmm-badge pmm-badge--success pmm-badge--dot">Mastered</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. CALL TO ACTION SECTION
+         ====================================================================== -->
+    <section class="pmm-cta-section" id="cta">
+      <div class="pmm-cta-banner">
+        <span class="pmm-badge pmm-badge--accent pmm-badge--pill">Join the Academic Matrix</span>
+
+        <h2 class="pmm-cta-headline">Ready to test your knowledge?</h2>
+
+        <p class="pmm-cta-body">
+          Build lasting recall across pharmaceutical sciences. Experience adaptive diagnostic quizzes, rigorous compendial explanations, and real-time performance telemetry.
+        </p>
+
+        <div class="pmm-cta-buttons">
+          <a href="register.html" class="pmm-btn pmm-btn--accent pmm-btn--lg" id="footer-cta-register">
+            <span>Create Your PMM Account</span>
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#subjects" class="pmm-btn pmm-btn--outline pmm-btn--lg">
+            <span>Browse Curriculum Index</span>
+          </a>
+        </div>
+
+        <div class="pmm-cta-trust">
+          <span>✓ Instant Access</span>
+          <span>•</span>
+          <span>✓ Zero Credit Card Required</span>
+          <span>•</span>
+          <span>✓ Designed for Pharmacy Scholars</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       7. FOOTER SECTION
+       ======================================================================== -->
+  <footer class="pmm-landing-footer" id="about">
+    <div class="pmm-footer-grid">
+      <!-- Col 1: Brand & Mission -->
+      <div class="pmm-footer-brand-col">
+        <a href="#hero" class="pmm-brand-lockup">
+          <div class="pmm-brand-logo">PMM</div>
+          <div class="pmm-brand-text">
+            <span class="pmm-brand-title">Pharmaceutics Mastery Matrix</span>
+            <span class="pmm-brand-subtitle">Learn. Practice. Master.</span>
+          </div>
+        </a>
+        <p class="pmm-footer-about">
+          A dedicated scientific mastery and assessment platform for pharmacy students, licensure candidates, and pharmaceutical researchers.
+        </p>
+      </div>
+
+      <!-- Col 2: Subjects -->
+      <div class="pmm-footer-col">
+        <div class="pmm-footer-heading">Curriculum</div>
+        <a href="#subjects" class="pmm-footer-link">Pharmacology</a>
+        <a href="#subjects" class="pmm-footer-link">Pharmaceutics</a>
+        <a href="#subjects" class="pmm-footer-link">Pharmacognosy</a>
+        <a href="#subjects" class="pmm-footer-link">Medicinal Chemistry</a>
+        <a href="#subjects" class="pmm-footer-link">Clinical Pharmacy</a>
+        <a href="#subjects" class="pmm-footer-link">Pharmaceutical Analysis</a>
+      </div>
+
+      <!-- Col 3: Platform -->
+      <div class="pmm-footer-col">
+        <div class="pmm-footer-heading">Platform</div>
+        <a href="#how-it-works" class="pmm-footer-link">Mastery Framework</a>
+        <a href="#performance" class="pmm-footer-link">Telemetry Analytics</a>
+        <a href="register.html" class="pmm-footer-link">Adaptive Assessments</a>
+        <a href="register.html" class="pmm-footer-link">Spaced Repetition Engine</a>
+      </div>
+
+      <!-- Col 4: Institutional -->
+      <div class="pmm-footer-col">
+        <div class="pmm-footer-heading">Institutional</div>
+        <a href="#about" class="pmm-footer-link">About PMM</a>
+        <a href="#about" class="pmm-footer-link">Academic Advisory</a>
+        <a href="#about" class="pmm-footer-link">Compendial Standards</a>
+        <a href="#about" class="pmm-footer-link">Contact Faculty</a>
+      </div>
+
+      <!-- Col 5: Governance -->
+      <div class="pmm-footer-col">
+        <div class="pmm-footer-heading">Governance</div>
+        <a href="#about" class="pmm-footer-link">Privacy Policy</a>
+        <a href="#about" class="pmm-footer-link">Terms of Service</a>
+        <a href="#about" class="pmm-footer-link">Academic Honor Code</a>
+        <a href="#about" class="pmm-footer-link">Accessibility Statement</a>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pmm-footer-bottom">
+      <div>
+        © 2026 Pharmaceutics Mastery Matrix (PMM). Built with scientific precision. All rights reserved.
+      </div>
+      <div class="pmm-system-status-indicator">
+        <span>Matrix Core: All Diagnostic Engines Operational</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript Foundation & Landing Script -->
+  <script src="./js/pmm-components.js"></script>
+  <script src="./js/services/mock-auth-adapter.js"></script>
+  <script src="./js/services/auth-service.js"></script>
+  <script src="./js/utils/guard.js"></script>
+  <script src="./js/pmm-landing.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.PMM_Guard) {
+        PMM_Guard.updateNavAuth();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+/**
+ * Pharmaceutics Mastery Matrix (PMM) - Typography System
+ * High legibility, academic rigor, modern geometric grotesque + scientific monospace.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+:root {
+  /* Font Family Stacks */
+  --pmm-font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --pmm-font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', Menlo, Consolas, Monaco, monospace;
+
+  /* Font Weights */
+  --pmm-font-weight-normal:   400;
+  --pmm-font-weight-medium:   500;
+  --pmm-font-weight-semibold: 600;
+  --pmm-font-weight-bold:     700;
+  --pmm-font-weight-extrabold: 800;
+
+  /* Scale: Display Heading (40px / 2.5rem) */
+  --pmm-text-display-size:   2.5rem;
+  --pmm-text-display-lh:     1.15;
+  --pmm-text-display-track:  -0.03em;
+  --pmm-text-display-weight: var(--pmm-font-weight-extrabold);
+
+  /* Scale: H1 (32px / 2.0rem) */
+  --pmm-text-h1-size:   2rem;
+  --pmm-text-h1-lh:     1.25;
+  --pmm-text-h1-track:  -0.025em;
+  --pmm-text-h1-weight: var(--pmm-font-weight-bold);
+
+  /* Scale: H2 (24px / 1.5rem) */
+  --pmm-text-h2-size:   1.5rem;
+  --pmm-text-h2-lh:     1.3;
+  --pmm-text-h2-track:  -0.02em;
+  --pmm-text-h2-weight: var(--pmm-font-weight-semibold);
+
+  /* Scale: H3 (20px / 1.25rem) */
+  --pmm-text-h3-size:   1.25rem;
+  --pmm-text-h3-lh:     1.35;
+  --pmm-text-h3-track:  -0.015em;
+  --pmm-text-h3-weight: var(--pmm-font-weight-semibold);
+
+  /* Scale: Body Large / Lead (18px / 1.125rem) */
+  --pmm-text-lead-size:   1.125rem;
+  --pmm-text-lead-lh:     1.5;
+  --pmm-text-lead-weight: var(--pmm-font-weight-normal);
+
+  /* Scale: Body (16px / 1rem) */
+  --pmm-text-body-size:   1rem;
+  --pmm-text-body-lh:     1.55;
+  --pmm-text-body-weight: var(--pmm-font-weight-normal);
+
+  /* Scale: Small Text (14px / 0.875rem) */
+  --pmm-text-small-size:   0.875rem;
+  --pmm-text-small-lh:     1.45;
+  --pmm-text-small-weight: var(--pmm-font-weight-normal);
+
+  /* Scale: Micro / Caption (12px / 0.75rem) */
+  --pmm-text-micro-size:   0.75rem;
+  --pmm-text-micro-lh:     1.4;
+  --pmm-text-micro-weight: var(--pmm-font-weight-medium);
+
+  /* Scale: Labels & Overlines (11px / 0.6875rem) */
+  --pmm-text-label-size:   0.6875rem;
+  --pmm-text-label-lh:     1.3;
+  --pmm-text-label-track:  0.08em;
+  --pmm-text-label-weight: var(--pmm-font-weight-semibold);
+
+  /* Scale: Button Typography (14px / 0.875rem) */
+  --pmm-text-button-size:   0.875rem;
+  --pmm-text-button-lh:     1;
+  --pmm-text-button-track:  0.015em;
+  --pmm-text-button-weight: var(--pmm-font-weight-semibold);
+}
+
+/* ==========================================================================
+   TYPOGRAPHY CLASS UTILITIES
+   ========================================================================== */
+
+.pmm-display {
+  font-family: var(--pmm-font-sans);
+  font-size: var(--pmm-text-display-size);
+  line-height: var(--pmm-text-display-lh);
+  letter-spacing: var(--pmm-text-display-track);
+  font-weight: var(--pmm-text-display-weight);
+  color: var(--pmm-text-primary);
+}
+
+.pmm-h1 {
+  font-family: var(--pmm-font-sans);
+  font-size: var(--pmm-text-h1-size);
+  line-height: var(--pmm-text-h1-lh);
+  letter-spacing: var(--pmm-text-h1-track);
+  font-weight: var(--pmm-text-h1-weight);
+  color: var(--pmm-text-primary);
+}
+
+.pmm-h2 {
+  font-family: var(--pmm-font-sans);
+  font-size: var(--pmm-text-h2-size);
+  line-height: var(--pmm-text-h2-lh);
+  letter-spacing: var(--pmm-text-h2-track);
+  font-weight: var(--pmm-text-h2-weight);
+  color: var(--pmm-text-primary);
+}
+
+.pmm-h3 {
+  font-family: var(--pmm-font-sans);
+  font-size: var(--pmm-text-h3-size);
+  line-height: var(--pmm-text-h3-lh);
+  letter-spacing: var(--pmm-text-h3-track);
+  font-weight: var(--pmm-text-h3-weight);
+  color: var(--pmm-text-primary);
+}
+
+.pmm-body-lead {
+  font-family: var(--pmm-font-sans);
+  font-size: var(--pmm-text-lead-size);
+  line-height: var(--pmm-text-lead-lh);
+  font-weight: var(--pmm-text-lead-weight);
+  color: var(--pmm-text-secondary);
+}
+
+.pmm-body {
+  font-family: var(--pmm-font-sans);
+  font-size: var(--pmm-text-body-size);
+  line-height: var(--pmm-text-body-lh);
+  font-weight: var(--pmm-text-body-weight);
+  color: var(--pmm-text-primary);
+}
+
+.pmm-body-sm {
+  font-family: var(--pmm-font-sans);
+  font-size: var(--pmm-text-small-size);
+  line-height: var(--pmm-text-small-lh);
+  font-weight: var(--pmm-text-small-weight);
+  color: var(--pmm-text-secondary);
+}
+
+.pmm-micro {
+  font-family: var(--pmm-font-sans);
+  font-size: var(--pmm-text-micro-size);
+  line-height: var(--pmm-text-micro-lh);
+  font-weight: var(--pmm-text-micro-weight);
+  color: var(--pmm-text-muted);
+}
+
+.pmm-label {
+  font-family: var(--pmm-font-sans);
+  font-size: var(--pmm-text-label-size);
+  line-height: var(--pmm-text-label-lh);
+  letter-spacing: var(--pmm-text-label-track);
+  font-weight: var(--pmm-text-label-weight);
+  text-transform: uppercase;
+  color: var(--pmm-text-muted);
+}
+
+.pmm-btn-text {
+  font-family: var(--pmm-font-sans);
+  font-size: var(--pmm-text-button-size);
+  line-height: var(--pmm-text-button-lh);
+  letter-spacing: var(--pmm-text-button-track);
+  font-weight: var(--pmm-text-button-weight);
+}
+
+/* Scientific & Technical Notation */
+.pmm-mono {
+  font-family: var(--pmm-font-mono);
+  font-feature-settings: 'tnum' on, 'zero' on;
+}
+
+.pmm-stat-value {
+  font-family: var(--pmm-font-sans);
+  font-weight: var(--pmm-font-weight-extrabold);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-feature-settings: 'tnum' on;
+}
+
+.pmm-text-accent {
+  color: var(--pmm-accent);
+}
+
+.pmm-text-primary-brand {
+  color: var(--pmm-primary);
+}
+
+.pmm-text-success {
+  color: var(--pmm-color-success-500);
+}
+
+.pmm-text-warning {
+  color: var(--pmm-color-warning-500);
+}
+
+.pmm-text-error {
+  color: var(--pmm-color-error-500);
+}
+
+.pmm-text-muted {
+  color: var(--pmm-text-muted);
+}
+
+.pmm-text-secondary {
+  color: var(--pmm-text-secondary);
+}
+
+/* Responsive typography scaling */
+@media (max-width: 768px) {
+  :root {
+    --pmm-text-display-size: 2rem;
+    --pmm-text-h1-size:      1.625rem;
+    --pmm-text-h2-size:      1.25rem;
+    --pmm-text-h3-size:      1.125rem;
+  }
+}

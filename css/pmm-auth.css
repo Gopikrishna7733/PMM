@@ -1,0 +1,241 @@
+/**
+ * Pharmaceutics Mastery Matrix (PMM) - Authentication Stylesheet
+ * High-precision, distraction-free scholar login & registration interfaces.
+ */
+
+@import url('./pmm-system.css');
+
+.pmm-auth-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--pmm-bg-app);
+  color: var(--pmm-text-primary);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background Subtle Mesh */
+.pmm-auth-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 50% 10%, rgba(37, 123, 243, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(34, 211, 238, 0.08) 0%, transparent 40%),
+    linear-gradient(to right, rgba(148, 163, 184, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Auth Header */
+.pmm-auth-header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--pmm-space-6);
+  z-index: 1;
+}
+
+/* Auth Center Layout */
+.pmm-auth-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--pmm-space-6) var(--pmm-space-4);
+  position: relative;
+  z-index: 1;
+}
+
+.pmm-auth-card {
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--pmm-bg-surface);
+  border: 1px solid var(--pmm-border-strong);
+  border-radius: var(--pmm-radius-xl);
+  box-shadow: var(--pmm-shadow-xl), 0 0 35px -10px rgba(37, 123, 243, 0.2);
+  padding: var(--pmm-space-8);
+  position: relative;
+  overflow: hidden;
+}
+
+.pmm-auth-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--pmm-card-sheen);
+}
+
+.pmm-auth-card-header {
+  text-align: center;
+  margin-bottom: var(--pmm-space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--pmm-space-2);
+}
+
+.pmm-auth-title {
+  font-family: var(--pmm-font-sans);
+  font-size: 1.625rem;
+  font-weight: var(--pmm-font-weight-bold);
+  color: var(--pmm-text-primary);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.pmm-auth-subtitle {
+  font-size: var(--pmm-text-small-size);
+  color: var(--pmm-text-secondary);
+}
+
+/* Demo Credentials Quick-Fill Card */
+.pmm-demo-credentials-box {
+  background-color: var(--pmm-bg-surface-elevated);
+  border: 1px dashed var(--pmm-border-strong);
+  border-radius: var(--pmm-radius-md);
+  padding: var(--pmm-space-3) var(--pmm-space-4);
+  margin-bottom: var(--pmm-space-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--pmm-space-3);
+  font-size: var(--pmm-text-micro-size);
+}
+
+.pmm-demo-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pmm-demo-info strong {
+  color: var(--pmm-text-primary);
+  font-family: var(--pmm-font-mono);
+}
+
+.pmm-demo-fill-btn {
+  font-family: var(--pmm-font-sans);
+  font-size: 11px;
+  font-weight: var(--pmm-font-weight-semibold);
+  color: var(--pmm-accent);
+  background-color: var(--pmm-accent-soft);
+  border: 1px solid var(--pmm-accent-border);
+  padding: 4px 10px;
+  border-radius: var(--pmm-radius-sm);
+  cursor: pointer;
+  transition: all var(--pmm-transition-fast);
+}
+
+.pmm-demo-fill-btn:hover {
+  background-color: var(--pmm-accent);
+  color: #070a12;
+}
+
+/* Alert Message Box */
+.pmm-auth-alert {
+  padding: var(--pmm-space-3) var(--pmm-space-4);
+  border-radius: var(--pmm-radius-md);
+  font-size: var(--pmm-text-small-size);
+  margin-bottom: var(--pmm-space-4);
+  display: none;
+  align-items: center;
+  gap: var(--pmm-space-2);
+}
+
+.pmm-auth-alert--error {
+  background-color: var(--pmm-color-error-soft);
+  color: var(--pmm-color-error-400);
+  border: 1px solid var(--pmm-color-error-border);
+  display: flex;
+}
+
+.pmm-auth-alert--success {
+  background-color: var(--pmm-color-success-soft);
+  color: var(--pmm-color-success-400);
+  border: 1px solid var(--pmm-color-success-border);
+  display: flex;
+}
+
+/* Form Styles */
+.pmm-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pmm-space-4);
+}
+
+.pmm-password-toggle {
+  position: absolute;
+  right: var(--pmm-space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--pmm-text-muted);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pmm-password-toggle:hover {
+  color: var(--pmm-text-primary);
+}
+
+.pmm-auth-card-footer {
+  margin-top: var(--pmm-space-6);
+  padding-top: var(--pmm-space-5);
+  border-top: 1px solid var(--pmm-border-subtle);
+  text-align: center;
+  font-size: var(--pmm-text-small-size);
+  color: var(--pmm-text-secondary);
+}
+
+.pmm-auth-card-footer a {
+  color: var(--pmm-accent);
+  font-weight: var(--pmm-font-weight-semibold);
+  text-decoration: none;
+}
+
+.pmm-auth-card-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Password Strength Indicator */
+.pmm-password-strength-bar {
+  display: flex;
+  gap: 4px;
+  height: 4px;
+  margin-top: 4px;
+}
+
+.pmm-strength-segment {
+  flex: 1;
+  height: 100%;
+  border-radius: var(--pmm-radius-full);
+  background-color: var(--pmm-border-strong);
+  transition: background-color var(--pmm-transition-fast);
+}
+
+.pmm-strength-segment.is-active-error { background-color: var(--pmm-color-error-500); }
+.pmm-strength-segment.is-active-warning { background-color: var(--pmm-color-warning-500); }
+.pmm-strength-segment.is-active-success { background-color: var(--pmm-color-success-500); }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .pmm-auth-card {
+    padding: var(--pmm-space-6) var(--pmm-space-4);
+  }
+
+  .pmm-auth-title {
+    font-size: 1.375rem;
+  }
+}

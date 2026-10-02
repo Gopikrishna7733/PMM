@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pharmaceutics Mastery Matrix (PMM) - Scholar Dashboard" />
+  <title>Scholar Dashboard — Pharmaceutics Mastery Matrix (PMM)</title>
+  
+  <link rel="stylesheet" href="./css/pmm-system.css" />
+  <link rel="stylesheet" href="./css/pmm-dashboard.css" />
+</head>
+<body style="background-color: var(--pmm-bg-app); color: var(--pmm-text-primary);">
+
+  <!-- PMM App Shell Container -->
+  <div class="pmm-shell">
+
+    <!-- Mobile Drawer Backdrop -->
+    <div class="pmm-sidebar-backdrop" id="pmm-sidebar-backdrop"></div>
+
+    <!-- 1. SIDEBAR -->
+    <aside class="pmm-shell__sidebar pmm-sidebar" id="pmm-main-sidebar" aria-label="Curriculum Navigation">
+      <div class="pmm-sidebar__header">
+        <a href="index.html" class="pmm-sidebar__logo-mark" aria-label="PMM Home">PMM</a>
+        <div class="pmm-sidebar__brand-text">
+          <span class="pmm-sidebar__brand-name">Pharmaceutics</span>
+          <span class="pmm-sidebar__brand-tag">Mastery Matrix</span>
+        </div>
+      </div>
+
+      <!-- Navigation Section 1 -->
+      <div class="pmm-sidebar__section">
+        <div class="pmm-sidebar__section-title">Academic Matrix</div>
+        <nav class="pmm-nav" aria-label="Matrix Sections">
+          <a href="dashboard.html" class="pmm-nav__link pmm-nav__link--active" aria-current="page">
+            <svg class="pmm-nav__icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            <span class="pmm-nav__label">Overview</span>
+          </a>
+          <a href="#subjects-section" class="pmm-nav__link">
+            <svg class="pmm-nav__icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            <span class="pmm-nav__label">Enrolled Subjects</span>
+            <span class="pmm-badge pmm-badge--accent pmm-nav__badge" id="nav-subject-count">6</span>
+          </a>
+          <a href="#activity-section" class="pmm-nav__link">
+            <svg class="pmm-nav__icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span class="pmm-nav__label">Recent Activity</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Navigation Section 2 -->
+      <div class="pmm-sidebar__section">
+        <div class="pmm-sidebar__section-title">Telemetry & Diagnostics</div>
+        <nav class="pmm-nav" aria-label="Diagnostics">
+          <a href="#stats-section" class="pmm-nav__link">
+            <svg class="pmm-nav__icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <span class="pmm-nav__label">Accuracy Radar</span>
+          </a>
+          <a href="index.html" class="pmm-nav__link">
+            <svg class="pmm-nav__icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            <span class="pmm-nav__label">Public Landing</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- User Profile at Sidebar Bottom -->
+      <div class="pmm-sidebar__footer">
+        <div class="pmm-sidebar__user-card" id="sidebar-user-trigger" tabindex="0" role="button" aria-haspopup="true" aria-label="User profile options">
+          <div class="pmm-avatar pmm-avatar--sm pmm-avatar--scientific-ring">
+            <span class="pmm-avatar__fallback" id="user-avatar-initials">SC</span>
+            <span class="pmm-avatar__status"></span>
+          </div>
+          <div class="pmm-sidebar__user-info">
+            <span class="pmm-sidebar__user-name" id="user-display-name">Dr. Sarah Chen</span>
+            <span class="pmm-sidebar__user-role" id="user-role-label">Research Fellow</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 2. MAIN APPLICATION WORKSPACE -->
+    <div class="pmm-shell__main">
+
+      <!-- TOP NAVIGATION BAR -->
+      <header class="pmm-topnav">
+        <div class="pmm-topnav__left">
+          <!-- Mobile Sidebar Toggle -->
+          <button type="button" class="pmm-btn pmm-btn--icon pmm-btn--ghost pmm-only-mobile" data-pmm-sidebar-toggle aria-label="Toggle sidebar menu">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+
+          <!-- Search Input -->
+          <div class="pmm-topnav__search pmm-hide-mobile">
+            <div class="pmm-input-wrap pmm-input-wrap--icon-left">
+              <span class="pmm-input__icon-left" aria-hidden="true">
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              </span>
+              <input type="search" class="pmm-input" placeholder="Search matrix topics, formulas, or drugs..." />
+              <span class="pmm-topnav__shortcut-badge">⌘K</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pmm-topnav__right">
+          <!-- Active Streak Counter Pill -->
+          <div class="pmm-topnav__status-pill">
+            <span aria-hidden="true">🔥</span>
+            <span id="streak-pill-text">18-Day Recall Streak</span>
+          </div>
+
+          <!-- Theme Toggle -->
+          <button type="button" class="pmm-btn pmm-btn--icon pmm-btn--ghost" data-pmm-theme-toggle aria-label="Toggle dark/light mode" data-pmm-tooltip="Visual Mode" data-pmm-tooltip-pos="bottom">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+
+          <!-- User Menu Dropdown Trigger -->
+          <div class="pmm-user-dropdown" id="user-menu-container">
+            <button type="button" class="pmm-btn pmm-btn--icon pmm-btn--ghost" id="btn-user-menu" aria-label="User account menu" aria-expanded="false">
+              <div class="pmm-avatar pmm-avatar--sm">
+                <span class="pmm-avatar__fallback" id="header-avatar-initials">SC</span>
+              </div>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <div class="pmm-dropdown-menu" id="user-dropdown-panel" role="menu">
+              <div style="padding: var(--pmm-space-2) var(--pmm-space-3);">
+                <div style="font-weight: 600; font-size: 13px; color: var(--pmm-text-primary);" id="dropdown-user-name">Dr. Sarah Chen</div>
+                <div style="font-size: 11px; color: var(--pmm-text-muted);" id="dropdown-user-email">scholar@pmm.edu</div>
+              </div>
+              <div class="pmm-dropdown-divider"></div>
+              <a href="index.html" class="pmm-dropdown-item" role="menuitem">PMM Landing Page</a>
+              <button type="button" class="pmm-dropdown-item" id="btn-trigger-logout" role="menuitem" style="color: var(--pmm-color-error-400);">
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                <span>Sign Out</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- DASHBOARD PAGE CONTENT -->
+      <main class="pmm-shell__content">
+
+        <!-- WELCOME BANNER -->
+        <section class="pmm-welcome-banner" aria-label="Scholar Status Summary">
+          <div class="pmm-welcome-content">
+            <div style="display: flex; align-items: center; gap: var(--pmm-space-2);">
+              <span class="pmm-badge pmm-badge--accent pmm-badge--dot">Active Research Session</span>
+              <span class="pmm-micro pmm-mono">Session ID: PMM-2026-LIVE</span>
+            </div>
+            <h1 class="pmm-welcome-title" id="welcome-title">Welcome back, Scholar</h1>
+            <p class="pmm-welcome-subtitle" id="welcome-subtitle">
+              Your overall matrix retention rate is currently at <strong>94.6%</strong> across 6 enrolled disciplines. Next recommended review: <em>Phase I Cytochrome P450 Biotransformation</em>.
+            </p>
+          </div>
+          <div class="pmm-welcome-actions">
+            <a href="#subjects-section" class="pmm-btn pmm-btn--primary">
+              <span>Resume Study</span>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </section>
+
+        <!-- 4 CORE PERFORMANCE METRICS ROW -->
+        <section class="pmm-grid pmm-grid--4" id="stats-section" aria-label="Core Performance Metrics">
+          <!-- Metric 1: Accuracy Rate -->
+          <div class="pmm-card pmm-stat-card">
+            <div class="pmm-stat-card__header">
+              <span class="pmm-stat-card__label">Mastery Accuracy</span>
+              <div class="pmm-stat-card__icon pmm-stat-card__icon--accent">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+            </div>
+            <div class="pmm-stat-card__value" id="stat-accuracy">94.6%</div>
+            <div class="pmm-stat-card__footer">
+              <span class="pmm-stat-card__trend pmm-stat-card__trend--up">↑ +4.2%</span>
+              <span class="pmm-stat-card__context">vs target cohort</span>
+            </div>
+          </div>
+
+          <!-- Metric 2: Quizzes Solved -->
+          <div class="pmm-card pmm-stat-card">
+            <div class="pmm-stat-card__header">
+              <span class="pmm-stat-card__label">Quizzes Completed</span>
+              <div class="pmm-stat-card__icon pmm-stat-card__icon--success">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+            </div>
+            <div class="pmm-stat-card__value" id="stat-quizzes">142</div>
+            <div class="pmm-stat-card__footer">
+              <span class="pmm-badge pmm-badge--success pmm-badge--dot">1,420 Items Solved</span>
+            </div>
+          </div>
+
+          <!-- Metric 3: Active Streak -->
+          <div class="pmm-card pmm-stat-card">
+            <div class="pmm-stat-card__header">
+              <span class="pmm-stat-card__label">Daily Streak</span>
+              <div class="pmm-stat-card__icon pmm-stat-card__icon--warning">
+                <span style="font-size: 16px;">🔥</span>
+              </div>
+            </div>
+            <div class="pmm-stat-card__value" id="stat-streak">18 Days</div>
+            <div class="pmm-stat-card__footer">
+              <span class="pmm-stat-card__trend" style="color: var(--pmm-color-warning-400);">Spaced Retention Active</span>
+            </div>
+          </div>
+
+          <!-- Metric 4: Academic Tier -->
+          <div class="pmm-card pmm-stat-card">
+            <div class="pmm-stat-card__header">
+              <span class="pmm-stat-card__label">Academic Standing</span>
+              <div class="pmm-stat-card__icon">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+            </div>
+            <div class="pmm-stat-card__value" style="font-size: 1.375rem; line-height: 1.2;" id="stat-tier">Tier IV: Fellow</div>
+            <div class="pmm-stat-card__footer">
+              <span class="pmm-badge pmm-badge--platinum">88% to Dean's Scholar</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ENROLLED SUBJECTS SECTION -->
+        <section style="margin-top: var(--pmm-space-8);" id="subjects-section" aria-label="Enrolled Subjects">
+          <div class="pmm-dashboard-section-header">
+            <div>
+              <h2 class="pmm-dashboard-section-title">Enrolled Pharmacy Subjects</h2>
+              <p class="pmm-card__subtitle">Core curriculum modules with real-time mastery retention progress</p>
+            </div>
+            <span class="pmm-badge pmm-badge--primary pmm-badge--pill">Phase 1 Curriculum</span>
+          </div>
+
+          <!-- Dynamic Subject Cards Container -->
+          <div class="pmm-grid pmm-grid--3" id="enrolled-subjects-grid">
+            <!-- Dynamically populated by JS from DataService -->
+          </div>
+        </section>
+
+        <!-- LOWER SECTION: RECENT ACTIVITY & METRIC BREAKDOWN -->
+        <section class="pmm-dashboard-lower-grid" id="activity-section">
+          <!-- Col 1: Recent Activity Feed -->
+          <div class="pmm-card pmm-card--elevated" style="padding: var(--pmm-space-6);">
+            <div class="pmm-dashboard-section-header">
+              <h3 class="pmm-card__title">Recent Study Activity</h3>
+              <span class="pmm-micro pmm-mono">Last 7 Days</span>
+            </div>
+            <div class="pmm-activity-list" id="activity-list-container">
+              <!-- Dynamically populated by JS -->
+            </div>
+          </div>
+
+          <!-- Col 2: Phase 1 Architecture & Supabase Preparedness Notice -->
+          <div class="pmm-card pmm-card--glass" style="padding: var(--pmm-space-6); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; gap: var(--pmm-space-2); margin-bottom: var(--pmm-space-3);">
+                <span class="pmm-badge pmm-badge--accent pmm-badge--dot">Phase 1 Architecture</span>
+              </div>
+              <h3 class="pmm-card__title" style="font-size: 1.125rem;">Modular Architecture Active</h3>
+              <p class="pmm-body-sm" style="color: var(--pmm-text-secondary); margin-top: var(--pmm-space-2); line-height: 1.55;">
+                All dashboard metrics and authentication sessions are orchestrated through modular repository services (<code class="pmm-mono">AuthService</code> and <code class="pmm-mono">DataService</code>).
+              </p>
+              <div style="margin-top: var(--pmm-space-4); display: flex; flex-direction: column; gap: var(--pmm-space-2);">
+                <div class="pmm-badge pmm-badge--success pmm-badge--dot" style="width: fit-content;">Mock Storage Adapter Active</div>
+                <div class="pmm-badge pmm-badge--primary" style="width: fit-content;">Ready for Phase 2 Supabase Swap</div>
+              </div>
+            </div>
+
+            <div style="margin-top: var(--pmm-space-6); padding-top: var(--pmm-space-4); border-top: 1px solid var(--pmm-border-subtle);">
+              <button type="button" class="pmm-btn pmm-btn--outline pmm-btn--sm" style="width: 100%;" onclick="alert('Phase 1 is complete! Phase 2 will introduce Supabase and the active quiz runner.');">
+                View Roadmap
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Sign Out Confirmation Modal Dialog -->
+  <div id="modal-signout" class="pmm-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="pmm-modal__dialog" style="max-width: 440px;">
+      <div class="pmm-modal__header">
+        <h3 class="pmm-modal__title">Confirm Sign Out</h3>
+        <button type="button" class="pmm-modal__close" data-pmm-modal-close aria-label="Close dialog">✕</button>
+      </div>
+      <div class="pmm-modal__body">
+        <p class="pmm-body">Are you sure you want to end your active research session? Your current progress and streak are safely preserved.</p>
+      </div>
+      <div class="pmm-modal__footer">
+        <button type="button" class="pmm-btn pmm-btn--outline" data-pmm-modal-close>Cancel</button>
+        <button type="button" class="pmm-btn pmm-btn--danger" id="btn-confirm-logout">Sign Out</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core Services & Guard -->
+  <script src="./js/pmm-components.js"></script>
+  <script src="./js/services/mock-auth-adapter.js"></script>
+  <script src="./js/services/auth-service.js"></script>
+  <script src="./js/services/mock-data-adapter.js"></script>
+  <script src="./js/services/data-service.js"></script>
+  <script src="./js/utils/guard.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      // 1. ROUTE GUARD: Enforce authentication on dashboard.html
+      const currentUser = await PMM_Guard.requireAuth({ redirectTo: 'login.html' });
+      if (!currentUser) return; // If unauthenticated, redirecting now
+
+      // 2. Personalize User UI Elements
+      const metadata = currentUser.user_metadata || {};
+      const fullName = metadata.fullName || currentUser.email.split('@')[0];
+      const title = metadata.title || 'Mastery Scholar';
+      const email = currentUser.email;
+
+      // Extract initials
+      const initials = fullName
+        .split(' ')
+        .map(n => n[0])
+        .filter(Boolean)
+        .slice(0, 2)
+        .join('')
+        .toUpperCase() || 'SC';
+
+      document.getElementById('user-display-name').textContent = fullName;
+      document.getElementById('user-role-label').textContent = title;
+      document.getElementById('welcome-title').textContent = `Welcome back, ${fullName}`;
+      document.getElementById('user-avatar-initials').textContent = initials;
+      document.getElementById('header-avatar-initials').textContent = initials;
+      document.getElementById('dropdown-user-name').textContent = fullName;
+      document.getElementById('dropdown-user-email').textContent = email;
+
+      // 3. User Dropdown Menu Toggle
+      const userMenuBtn = document.getElementById('btn-user-menu');
+      const userDropdownPanel = document.getElementById('user-dropdown-panel');
+
+      userMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = userDropdownPanel.classList.toggle('is-active');
+        userMenuBtn.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!userDropdownPanel.contains(e.target) && e.target !== userMenuBtn) {
+          userDropdownPanel.classList.remove('is-active');
+          userMenuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // 4. Logout Handlers
+      const logoutTrigger = document.getElementById('btn-trigger-logout');
+      const confirmLogoutBtn = document.getElementById('btn-confirm-logout');
+
+      logoutTrigger.addEventListener('click', () => {
+        userDropdownPanel.classList.remove('is-active');
+        PMM.Modal.open('modal-signout');
+      });
+
+      confirmLogoutBtn.addEventListener('click', async () => {
+        await PMM_Guard.logout('index.html');
+      });
+
+      // 5. Fetch Dashboard Data via DataService
+      try {
+        const metrics = await PMM_DataService.getDashboardMetrics(currentUser.id);
+        const subjects = await PMM_DataService.getEnrolledSubjects(currentUser.id);
+        const activities = await PMM_DataService.getRecentActivity(currentUser.id);
+
+        // Update stats
+        if (metrics) {
+          document.getElementById('stat-accuracy').textContent = `${metrics.accuracy}%`;
+          document.getElementById('stat-quizzes').textContent = metrics.quizzesCompleted;
+          document.getElementById('stat-streak').textContent = `${metrics.streakDays} Days`;
+          document.getElementById('stat-tier').textContent = metrics.masteryLevel;
+          document.getElementById('streak-pill-text').textContent = `${metrics.streakDays}-Day Recall Streak`;
+        }
+
+        // Render Subjects Grid
+        const subjectsGrid = document.getElementById('enrolled-subjects-grid');
+        subjectsGrid.innerHTML = subjects.map(sub => `
+          <div class="pmm-card pmm-card--interactive pmm-subject-card">
+            <div class="pmm-subject-card__meta-row">
+              <span class="pmm-subject-card__code">${sub.code}</span>
+              <span class="pmm-badge pmm-badge--${sub.status === 'Active' ? 'success' : 'warning'} pmm-badge--dot">${sub.status}</span>
+            </div>
+            <div>
+              <h3 class="pmm-subject-card__title">${sub.title}</h3>
+              <div class="pmm-subject-card__stats" style="margin-top: 6px;">
+                <span>${sub.topicsCompleted}/${sub.totalTopics} Topics</span>
+                <span>•</span>
+                <span>${sub.mcqsSolved} MCQs</span>
+              </div>
+            </div>
+            <div class="pmm-progress pmm-progress--${sub.progress > 75 ? 'success' : 'accent'}">
+              <div class="pmm-progress__header">
+                <span class="pmm-progress__label">Mastery Progress</span>
+                <span class="pmm-progress__value">${sub.progress}%</span>
+              </div>
+              <div class="pmm-progress__track">
+                <div class="pmm-progress__bar" style="width: ${sub.progress}%;"></div>
+              </div>
+            </div>
+            <div class="pmm-subject-card__footer">
+              <span class="pmm-micro">Accuracy: ${sub.accuracy}%</span>
+              <button class="pmm-btn pmm-btn--sm pmm-btn--primary" onclick="alert('Subject module details for ${sub.title} will open in Phase 2.');">
+                Continue
+              </button>
+            </div>
+          </div>
+        `).join('');
+
+        // Render Activity Feed
+        const activityContainer = document.getElementById('activity-list-container');
+        activityContainer.innerHTML = activities.map(act => `
+          <div class="pmm-activity-item">
+            <div class="pmm-activity-icon">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="pmm-activity-info">
+              <span class="pmm-activity-title">${act.title}</span>
+              <span class="pmm-activity-meta">${act.subject} • ${act.score} • ${act.timestamp}</span>
+            </div>
+            <span class="pmm-badge pmm-badge--${act.badge === 'Perfect' || act.badge === 'Verified' ? 'success' : 'accent'} pmm-badge--pill">
+              ${act.badge}
+            </span>
+          </div>
+        `).join('');
+
+      } catch (err) {
+        console.error('Failed to load dashboard telemetry:', err);
+      }
+    });
+  </script>
+</body>
+</html>

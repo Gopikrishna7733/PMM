@@ -1,0 +1,922 @@
+/**
+ * Pharmaceutics Mastery Matrix (PMM) - Landing Page Stylesheet
+ * Integrates directly with the PMM design system (pmm-system.css).
+ * Responsive, accessible, and engineered for high scientific visual authority.
+ */
+
+@import url('./pmm-system.css');
+
+/* ==========================================================================
+   1. LANDING PAGE SHELL & NAVIGATION
+   ========================================================================== */
+
+.pmm-landing-body {
+  background-color: var(--pmm-bg-app);
+  color: var(--pmm-text-primary);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Background Subtle Matrix Mesh */
+.pmm-landing-body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(37, 123, 243, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 85% 35%, rgba(34, 211, 238, 0.06) 0%, transparent 40%),
+    linear-gradient(to right, rgba(148, 163, 184, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Top Sticky Navigation Bar */
+.pmm-landing-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--pmm-z-header);
+  background-color: var(--pmm-bg-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--pmm-border-default);
+  transition: border-color var(--pmm-transition-base);
+}
+
+.pmm-landing-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--pmm-space-6);
+}
+
+.pmm-brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: var(--pmm-space-3);
+  text-decoration: none;
+}
+
+.pmm-brand-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--pmm-radius-md);
+  background: linear-gradient(135deg, var(--pmm-color-primary-600) 0%, var(--pmm-accent) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-family: var(--pmm-font-sans);
+  font-weight: var(--pmm-font-weight-extrabold);
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  box-shadow: var(--pmm-shadow-glow);
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.pmm-brand-logo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.25) 0%, transparent 60%);
+}
+
+.pmm-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.pmm-brand-title {
+  font-family: var(--pmm-font-sans);
+  font-size: 1rem;
+  font-weight: var(--pmm-font-weight-bold);
+  letter-spacing: -0.015em;
+  color: var(--pmm-text-primary);
+  line-height: 1.2;
+}
+
+.pmm-brand-subtitle {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pmm-text-accent);
+  font-weight: var(--pmm-font-weight-semibold);
+}
+
+/* Nav Menu Links */
+.pmm-nav-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--pmm-space-6);
+}
+
+.pmm-nav-link {
+  font-family: var(--pmm-font-sans);
+  font-size: var(--pmm-text-small-size);
+  font-weight: var(--pmm-font-weight-medium);
+  color: var(--pmm-text-secondary);
+  text-decoration: none;
+  transition: color var(--pmm-transition-fast);
+  position: relative;
+  padding: var(--pmm-space-2) 0;
+}
+
+.pmm-nav-link:hover,
+.pmm-nav-link:focus-visible {
+  color: var(--pmm-text-primary);
+}
+
+.pmm-nav-link:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--pmm-accent);
+  border-radius: var(--pmm-radius-full);
+}
+
+/* Right Navigation Actions */
+.pmm-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--pmm-space-3);
+}
+
+/* Mobile Menu Toggle Button */
+.pmm-mobile-toggle {
+  display: none;
+}
+
+/* ==========================================================================
+   2. HERO SECTION
+   ========================================================================== */
+
+.pmm-hero-section {
+  position: relative;
+  padding: 80px 0 100px 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.pmm-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: var(--pmm-space-12);
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--pmm-space-6);
+}
+
+.pmm-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pmm-space-5);
+}
+
+.pmm-hero-badge-wrap {
+  display: inline-flex;
+  align-items: center;
+}
+
+.pmm-hero-title {
+  font-family: var(--pmm-font-sans);
+  font-size: 3.5rem;
+  font-weight: var(--pmm-font-weight-extrabold);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: var(--pmm-text-primary);
+}
+
+.pmm-hero-title-accent {
+  background: linear-gradient(135deg, #ffffff 30%, var(--pmm-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="light"] .pmm-hero-title-accent {
+  background: linear-gradient(135deg, var(--pmm-primary) 20%, var(--pmm-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pmm-hero-subtitle {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--pmm-text-secondary);
+  max-width: 580px;
+}
+
+.pmm-hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: var(--pmm-space-4);
+  margin-top: var(--pmm-space-2);
+}
+
+.pmm-hero-meta-row {
+  display: flex;
+  align-items: center;
+  gap: var(--pmm-space-6);
+  padding-top: var(--pmm-space-4);
+  border-top: 1px solid var(--pmm-border-subtle);
+  margin-top: var(--pmm-space-2);
+}
+
+.pmm-meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--pmm-space-2);
+  font-size: var(--pmm-text-small-size);
+  color: var(--pmm-text-secondary);
+}
+
+.pmm-meta-item strong {
+  color: var(--pmm-text-primary);
+  font-family: var(--pmm-font-mono);
+}
+
+/* Hero Scientific Visual Container */
+.pmm-hero-visual-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.pmm-hero-visual-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle at center, rgba(34, 211, 238, 0.16) 0%, rgba(37, 123, 243, 0.08) 50%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Interactive Pharmaceutical Quiz Card inside Hero */
+.pmm-hero-quiz-card {
+  position: relative;
+  z-index: 1;
+  background-color: var(--pmm-bg-surface);
+  border: 1px solid var(--pmm-border-strong);
+  border-radius: var(--pmm-radius-xl);
+  box-shadow: var(--pmm-shadow-xl), 0 0 30px -10px rgba(34, 211, 238, 0.15);
+  overflow: hidden;
+}
+
+.pmm-hero-quiz-hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--pmm-space-3) var(--pmm-space-5);
+  background-color: var(--pmm-bg-surface-elevated);
+  border-bottom: 1px solid var(--pmm-border-default);
+  font-family: var(--pmm-font-mono);
+  font-size: 11px;
+  color: var(--pmm-text-secondary);
+}
+
+.pmm-hud-live-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--pmm-color-success-400);
+}
+
+.pmm-hud-live-tag::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: var(--pmm-radius-full);
+  background-color: currentColor;
+  box-shadow: 0 0 8px currentColor;
+  animation: pmm-pulse 1.8s infinite;
+}
+
+@keyframes pmm-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.pmm-quiz-question-box {
+  padding: var(--pmm-space-5);
+}
+
+.pmm-quiz-question-text {
+  font-size: 1.0625rem;
+  font-weight: var(--pmm-font-weight-semibold);
+  color: var(--pmm-text-primary);
+  line-height: 1.45;
+  margin-bottom: var(--pmm-space-4);
+}
+
+.pmm-quiz-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pmm-space-2);
+}
+
+.pmm-quiz-option-item {
+  display: flex;
+  align-items: center;
+  gap: var(--pmm-space-3);
+  padding: var(--pmm-space-3) var(--pmm-space-4);
+  border-radius: var(--pmm-radius-md);
+  border: 1px solid var(--pmm-border-default);
+  background-color: var(--pmm-bg-surface-elevated);
+  font-size: var(--pmm-text-small-size);
+  color: var(--pmm-text-secondary);
+  transition: all var(--pmm-transition-fast);
+  cursor: pointer;
+}
+
+.pmm-quiz-option-item:hover {
+  border-color: var(--pmm-border-strong);
+  background-color: var(--pmm-bg-surface-active);
+  color: var(--pmm-text-primary);
+}
+
+.pmm-quiz-option-item--selected {
+  border-color: var(--pmm-color-success-500);
+  background-color: var(--pmm-color-success-soft);
+  color: var(--pmm-text-primary);
+  font-weight: var(--pmm-font-weight-semibold);
+}
+
+.pmm-option-key {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--pmm-radius-xs);
+  background-color: rgba(255, 255, 255, 0.08);
+  font-family: var(--pmm-font-mono);
+  font-size: 11px;
+  font-weight: var(--pmm-font-weight-bold);
+  flex-shrink: 0;
+}
+
+.pmm-quiz-option-item--selected .pmm-option-key {
+  background-color: var(--pmm-color-success-500);
+  color: #ffffff;
+}
+
+.pmm-hero-quiz-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--pmm-space-3) var(--pmm-space-5);
+  background-color: rgba(0, 0, 0, 0.15);
+  border-top: 1px solid var(--pmm-border-subtle);
+}
+
+/* Floating Scientific Telemetry Badges */
+.pmm-floating-chip {
+  position: absolute;
+  padding: var(--pmm-space-2) var(--pmm-space-3);
+  border-radius: var(--pmm-radius-md);
+  background-color: var(--pmm-bg-surface-elevated);
+  border: 1px solid var(--pmm-border-strong);
+  box-shadow: var(--pmm-shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--pmm-space-2);
+  font-family: var(--pmm-font-mono);
+  font-size: 11px;
+  color: var(--pmm-text-primary);
+  z-index: 2;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.pmm-floating-chip--top-right {
+  top: -14px;
+  right: -10px;
+}
+
+.pmm-floating-chip--bottom-left {
+  bottom: -18px;
+  left: -12px;
+}
+
+/* ==========================================================================
+   3. PMM MASTERY CONCEPT SECTION (4 Steps Pipeline)
+   ========================================================================== */
+
+.pmm-concept-section {
+  padding: 96px 0;
+  position: relative;
+  z-index: 1;
+  background-color: var(--pmm-bg-canvas);
+  border-top: 1px solid var(--pmm-border-subtle);
+  border-bottom: 1px solid var(--pmm-border-subtle);
+}
+
+.pmm-section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto var(--pmm-space-12) auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--pmm-space-3);
+}
+
+.pmm-section-tag {
+  display: inline-flex;
+}
+
+.pmm-steps-pipeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--pmm-space-6);
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--pmm-space-6);
+}
+
+/* Connecting Horizontal Pipeline Line */
+.pmm-steps-pipeline::before {
+  content: "";
+  position: absolute;
+  top: 48px;
+  left: calc(12.5% + 24px);
+  right: calc(12.5% + 24px);
+  height: 2px;
+  background: linear-gradient(90deg, 
+    var(--pmm-color-primary-500) 0%, 
+    var(--pmm-accent) 50%, 
+    var(--pmm-color-success-500) 100%
+  );
+  z-index: 0;
+  opacity: 0.45;
+}
+
+.pmm-step-card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--pmm-space-4);
+  padding: var(--pmm-space-6);
+  background-color: var(--pmm-bg-surface);
+  border: 1px solid var(--pmm-border-default);
+  border-radius: var(--pmm-radius-xl);
+  transition: all var(--pmm-transition-base);
+}
+
+.pmm-step-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--pmm-border-strong);
+  box-shadow: var(--pmm-shadow-lg);
+}
+
+.pmm-step-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--pmm-radius-lg);
+  background-color: var(--pmm-bg-surface-elevated);
+  border: 1px solid var(--pmm-border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--pmm-accent);
+  position: relative;
+  box-shadow: var(--pmm-shadow-sm);
+}
+
+.pmm-step-num-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--pmm-radius-full);
+  background-color: var(--pmm-primary);
+  color: #ffffff;
+  font-family: var(--pmm-font-mono);
+  font-size: 10px;
+  font-weight: var(--pmm-font-weight-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--pmm-bg-surface);
+}
+
+.pmm-step-card:nth-child(4) .pmm-step-num-badge {
+  background-color: var(--pmm-color-success-500);
+}
+
+.pmm-step-title {
+  font-family: var(--pmm-font-sans);
+  font-size: 1.25rem;
+  font-weight: var(--pmm-font-weight-bold);
+  color: var(--pmm-text-primary);
+  margin: 0;
+}
+
+.pmm-step-desc {
+  font-size: var(--pmm-text-small-size);
+  color: var(--pmm-text-secondary);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.pmm-step-pill {
+  padding: 4px var(--pmm-space-3);
+  border-radius: var(--pmm-radius-sm);
+  background-color: var(--pmm-bg-surface-elevated);
+  border: 1px solid var(--pmm-border-subtle);
+  font-family: var(--pmm-font-mono);
+  font-size: 11px;
+  color: var(--pmm-text-accent);
+}
+
+/* ==========================================================================
+   4. SUBJECTS PREVIEW SECTION
+   ========================================================================== */
+
+.pmm-subjects-section {
+  padding: 96px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.pmm-subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--pmm-space-6);
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--pmm-space-6);
+}
+
+.pmm-subject-preview-card {
+  padding: var(--pmm-space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--pmm-space-4);
+  height: 100%;
+}
+
+.pmm-subject-card-desc {
+  font-size: var(--pmm-text-small-size);
+  color: var(--pmm-text-secondary);
+  line-height: 1.5;
+  flex: 1;
+}
+
+/* ==========================================================================
+   5. PERFORMANCE TELEMETRY SECTION
+   ========================================================================== */
+
+.pmm-performance-section {
+  padding: 96px 0;
+  background-color: var(--pmm-bg-canvas);
+  border-top: 1px solid var(--pmm-border-subtle);
+  border-bottom: 1px solid var(--pmm-border-subtle);
+  position: relative;
+  z-index: 1;
+}
+
+.pmm-performance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--pmm-space-5);
+  max-width: 1440px;
+  margin: 0 auto var(--pmm-space-8) auto;
+  padding: 0 var(--pmm-space-6);
+}
+
+/* Performance Detailed Simulation Showcase */
+.pmm-telemetry-showcase {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--pmm-space-6);
+}
+
+.pmm-telemetry-panel {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--pmm-space-6);
+}
+
+.pmm-domain-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pmm-domain-matrix-table th {
+  text-align: left;
+  padding: var(--pmm-space-3);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pmm-text-muted);
+  border-bottom: 1px solid var(--pmm-border-subtle);
+}
+
+.pmm-domain-matrix-table td {
+  padding: var(--pmm-space-3);
+  font-size: var(--pmm-text-small-size);
+  color: var(--pmm-text-secondary);
+  border-bottom: 1px solid var(--pmm-border-subtle);
+}
+
+.pmm-domain-matrix-table tr:hover td {
+  background-color: var(--pmm-secondary-bg);
+  color: var(--pmm-text-primary);
+}
+
+.pmm-domain-matrix-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   6. CALL TO ACTION (CTA) SECTION
+   ========================================================================== */
+
+.pmm-cta-section {
+  padding: 110px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.pmm-cta-banner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--pmm-space-12) var(--pmm-space-8);
+  border-radius: var(--pmm-radius-xl);
+  background: radial-gradient(circle at top right, rgba(34, 211, 238, 0.14) 0%, transparent 60%),
+              radial-gradient(circle at bottom left, rgba(37, 123, 243, 0.12) 0%, transparent 60%),
+              var(--pmm-bg-surface);
+  border: 1px solid var(--pmm-border-strong);
+  box-shadow: var(--pmm-shadow-xl), 0 0 40px -10px rgba(37, 123, 243, 0.25);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--pmm-space-4);
+  position: relative;
+  overflow: hidden;
+}
+
+.pmm-cta-headline {
+  font-family: var(--pmm-font-sans);
+  font-size: 2.75rem;
+  font-weight: var(--pmm-font-weight-extrabold);
+  letter-spacing: -0.03em;
+  color: var(--pmm-text-primary);
+  line-height: 1.15;
+}
+
+.pmm-cta-body {
+  font-size: 1.125rem;
+  color: var(--pmm-text-secondary);
+  max-width: 620px;
+  line-height: 1.6;
+}
+
+.pmm-cta-buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--pmm-space-4);
+  margin-top: var(--pmm-space-4);
+}
+
+.pmm-cta-trust {
+  font-size: var(--pmm-text-micro-size);
+  color: var(--pmm-text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--pmm-space-4);
+  margin-top: var(--pmm-space-2);
+}
+
+/* ==========================================================================
+   7. FOOTER SECTION
+   ========================================================================== */
+
+.pmm-landing-footer {
+  background-color: var(--pmm-bg-app);
+  border-top: 1px solid var(--pmm-border-default);
+  padding: 80px 0 36px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.pmm-footer-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr 1fr;
+  gap: var(--pmm-space-8);
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--pmm-space-6);
+}
+
+.pmm-footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pmm-space-4);
+}
+
+.pmm-footer-about {
+  font-size: var(--pmm-text-small-size);
+  color: var(--pmm-text-muted);
+  line-height: 1.6;
+  max-width: 340px;
+}
+
+.pmm-footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pmm-space-3);
+}
+
+.pmm-footer-heading {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pmm-text-primary);
+  font-weight: var(--pmm-font-weight-bold);
+  margin-bottom: var(--pmm-space-1);
+}
+
+.pmm-footer-link {
+  font-size: var(--pmm-text-small-size);
+  color: var(--pmm-text-muted);
+  text-decoration: none;
+  transition: color var(--pmm-transition-fast);
+}
+
+.pmm-footer-link:hover {
+  color: var(--pmm-text-primary);
+}
+
+.pmm-footer-bottom {
+  max-width: 1440px;
+  margin: var(--pmm-space-12) auto 0 auto;
+  padding: var(--pmm-space-6) var(--pmm-space-6) 0 var(--pmm-space-6);
+  border-top: 1px solid var(--pmm-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--pmm-text-micro-size);
+  color: var(--pmm-text-muted);
+}
+
+.pmm-system-status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pmm-system-status-indicator::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: var(--pmm-radius-full);
+  background-color: var(--pmm-color-success-500);
+}
+
+/* ==========================================================================
+   8. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* Laptops / Compact Desktops */
+@media (max-width: 1200px) {
+  .pmm-hero-title {
+    font-size: 2.75rem;
+  }
+
+  .pmm-steps-pipeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pmm-steps-pipeline::before {
+    display: none;
+  }
+
+  .pmm-footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pmm-footer-brand-col {
+    grid-column: span 3;
+  }
+}
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .pmm-hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--pmm-space-8);
+  }
+
+  .pmm-hero-content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .pmm-hero-subtitle {
+    margin: 0 auto;
+  }
+
+  .pmm-hero-ctas {
+    justify-content: center;
+  }
+
+  .pmm-hero-meta-row {
+    justify-content: center;
+  }
+
+  .pmm-subjects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pmm-performance-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pmm-telemetry-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile Devices (< 768px) */
+@media (max-width: 767px) {
+  .pmm-nav-menu,
+  .pmm-nav-actions .pmm-btn {
+    display: none;
+  }
+
+  .pmm-mobile-toggle {
+    display: flex;
+  }
+
+  .pmm-hero-title {
+    font-size: 2.125rem;
+  }
+
+  .pmm-hero-ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .pmm-hero-ctas .pmm-btn {
+    width: 100%;
+  }
+
+  .pmm-hero-meta-row {
+    flex-direction: column;
+    gap: var(--pmm-space-2);
+  }
+
+  .pmm-steps-pipeline {
+    grid-template-columns: 1fr;
+  }
+
+  .pmm-subjects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pmm-performance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pmm-cta-headline {
+    font-size: 2rem;
+  }
+
+  .pmm-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .pmm-cta-buttons .pmm-btn {
+    width: 100%;
+  }
+
+  .pmm-footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pmm-footer-brand-col {
+    grid-column: span 1;
+  }
+
+  .pmm-footer-bottom {
+    flex-direction: column;
+    gap: var(--pmm-space-3);
+    text-align: center;
+  }
+}

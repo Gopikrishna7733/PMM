@@ -1,0 +1,283 @@
+/**
+ * Pharmaceutics Mastery Matrix (PMM) - Layout Architecture
+ * Modular grid, responsive container, flexbox primitives, and App Shell structure.
+ */
+
+/* ==========================================================================
+   1. APP SHELL ARCHITECTURE
+   ========================================================================== */
+
+.pmm-shell {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--pmm-bg-app);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Sidebar Shell */
+.pmm-shell__sidebar {
+  width: 270px;
+  min-width: 270px;
+  flex-shrink: 0;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: var(--pmm-z-sidebar);
+  transition: width var(--pmm-transition-smooth), transform var(--pmm-transition-smooth);
+}
+
+.pmm-shell__sidebar--collapsed {
+  width: 78px;
+  min-width: 78px;
+}
+
+/* Main Content Area */
+.pmm-shell__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 100vh;
+}
+
+/* Top Navigation Shell */
+.pmm-shell__topnav {
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: var(--pmm-z-header);
+}
+
+/* Page Body Container */
+.pmm-shell__content {
+  flex: 1;
+  padding: var(--pmm-space-6);
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Mobile Sidebar Backdrop */
+.pmm-sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(7, 10, 18, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: calc(var(--pmm-z-sidebar) - 1);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--pmm-transition-base);
+}
+
+.pmm-sidebar-backdrop.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ==========================================================================
+   2. CONTAINERS
+   ========================================================================== */
+
+.pmm-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--pmm-space-4);
+  padding-right: var(--pmm-space-4);
+}
+
+.pmm-container--sm {
+  max-width: 640px;
+}
+
+.pmm-container--md {
+  max-width: 960px;
+}
+
+.pmm-container--lg {
+  max-width: 1200px;
+}
+
+.pmm-container--xl {
+  max-width: 1440px;
+}
+
+.pmm-container--fluid {
+  max-width: 100%;
+}
+
+/* ==========================================================================
+   3. GRID SYSTEM
+   ========================================================================== */
+
+.pmm-grid {
+  display: grid;
+  gap: var(--pmm-space-5);
+}
+
+.pmm-grid--1 {
+  grid-template-columns: 1fr;
+}
+
+.pmm-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.pmm-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pmm-grid--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Auto-fit responsive grids for cards */
+.pmm-grid--auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.pmm-grid--auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+/* Gaps */
+.pmm-gap-2 { gap: var(--pmm-space-2); }
+.pmm-gap-3 { gap: var(--pmm-space-3); }
+.pmm-gap-4 { gap: var(--pmm-space-4); }
+.pmm-gap-5 { gap: var(--pmm-space-5); }
+.pmm-gap-6 { gap: var(--pmm-space-6); }
+.pmm-gap-8 { gap: var(--pmm-space-8); }
+
+/* ==========================================================================
+   4. FLEXBOX UTILITIES
+   ========================================================================== */
+
+.pmm-flex {
+  display: flex;
+}
+
+.pmm-inline-flex {
+  display: inline-flex;
+}
+
+.pmm-flex-col {
+  flex-direction: column;
+}
+
+.pmm-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.pmm-items-start {
+  align-items: flex-start;
+}
+
+.pmm-items-center {
+  align-items: center;
+}
+
+.pmm-items-end {
+  align-items: flex-end;
+}
+
+.pmm-items-stretch {
+  align-items: stretch;
+}
+
+.pmm-justify-start {
+  justify-content: flex-start;
+}
+
+.pmm-justify-center {
+  justify-content: center;
+}
+
+.pmm-justify-end {
+  justify-content: flex-end;
+}
+
+.pmm-justify-between {
+  justify-content: space-between;
+}
+
+.pmm-flex-1 {
+  flex: 1 1 0%;
+}
+
+.pmm-flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE BREAKPOINT BEHAVIORS
+   ========================================================================== */
+
+/* Laptop / Desktop (> 1024px) */
+@media (min-width: 1025px) {
+  .pmm-hide-desktop {
+    display: none !important;
+  }
+}
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .pmm-grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .pmm-shell__sidebar {
+    width: 240px;
+    min-width: 240px;
+  }
+
+  .pmm-hide-tablet {
+    display: none !important;
+  }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 767px) {
+  .pmm-grid--2,
+  .pmm-grid--3,
+  .pmm-grid--4 {
+    grid-template-columns: 1fr;
+  }
+
+  .pmm-shell {
+    display: block;
+  }
+
+  .pmm-shell__sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    min-width: 280px;
+    height: 100vh;
+    transform: translateX(-100%);
+    box-shadow: var(--pmm-shadow-xl);
+  }
+
+  .pmm-shell__sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .pmm-shell__content {
+    padding: var(--pmm-space-4);
+  }
+
+  .pmm-hide-mobile {
+    display: none !important;
+  }
+}
+
+/* Only show on mobile */
+@media (min-width: 768px) {
+  .pmm-only-mobile {
+    display: none !important;
+  }
+}
